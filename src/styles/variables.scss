@@ -1,0 +1,32 @@
+@mixin flexAlignCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flexJustCenter {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flexDirectColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexJustBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flexJustEvenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@mixin flexAlignLeft {
+  display: flex;
+  align-items: flex-start;
+}
+
+$startColor: #ff4242;
+$endColor: #f9b418;
