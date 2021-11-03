@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import BestBook from './BestBook';
+import { AiOutlineDoubleLeft } from 'react-icons/ai';
+import { AiOutlineDoubleRight } from 'react-icons/ai';
+import './Bestseller.scss';
 
 export class Bestseller extends Component {
   constructor() {
     super();
     this.state = {
-      BestsellerList: [],
+      bestsellerList: [],
       startIndex: 0,
       endIndex: 5,
     };
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/BestsellerList.json', {
-      method: 'GET',
-    })
+    fetch('./data/BestsellerList.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
-          BestsellerList: data,
+          bestsellerList: data,
         });
       });
   }
@@ -41,42 +42,40 @@ export class Bestseller extends Component {
   };
 
   render() {
-    const { BestsellerList, startIndex, endIndex } = this.state;
+    const { bestsellerList, startIndex, endIndex } = this.state;
     const { showBefore, showAfter } = this;
 
     return (
       <div className="bestSeller">
         <h1 className="bestSellerTitle">베스트셀러</h1>
+        <button
+          type="button"
+          onClick={showBefore}
+          className="beforeButton"
+          disabled={startIndex === 0 ? true : false}
+        >
+          <AiOutlineDoubleLeft size="24" />
+        </button>
+
         <div className="bestSellerGrid">
-          {BestsellerList.slice(startIndex, endIndex).map(BestsellerList => {
+          {bestsellerList.slice(startIndex, endIndex).map(bestsellerList => {
             return (
               <BestBook
-                key={BestsellerList.id}
-                imgSrc={BestsellerList.imgSrc}
-                rating={BestsellerList.rating}
-                desc={BestsellerList.desc}
+                key={bestsellerList.id}
+                bestsellerList={bestsellerList}
               />
             );
           })}
         </div>
-        <div className="showBtnWrapper">
-          <button
-            type="button"
-            onClick={showBefore}
-            className="showButton"
-            disabled={startIndex === 0 ? true : false}
-          >
-            이전 5개
-          </button>
-          <button
-            type="button"
-            onClick={showAfter}
-            className="showButton"
-            disabled={endIndex === 20 ? true : false}
-          >
-            다음 5개
-          </button>
-        </div>
+
+        <button
+          type="button"
+          onClick={showAfter}
+          className="afterButton"
+          disabled={endIndex === 20 ? true : false}
+        >
+          <AiOutlineDoubleRight size="24" />
+        </button>
       </div>
     );
   }

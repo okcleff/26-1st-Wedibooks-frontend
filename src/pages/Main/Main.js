@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Bestseller from '../../components/Main/Bestseller';
-import NewIssue from '../../components/Main/NewIssue';
-import Recommendation from '../../components/Main/Recommendation';
+import Bestseller from './Bestseller/Bestseller';
+import NewIssue from './NewIssue/NewIssue';
+import Recommendation from './Recommendation/Recommendation';
 import './Main.scss';
 
 export class Main extends Component {

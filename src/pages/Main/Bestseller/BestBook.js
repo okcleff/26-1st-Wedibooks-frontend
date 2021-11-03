@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-export class NewBook extends Component {
+export class BestBook extends Component {
   render() {
-    const { imgSrc, date } = this.props;
+    const { bestsellerList } = this.props;
+    const { imgSrc, name, rating } = bestsellerList;
 
     return (
       <div className="bookNDesc">
         <Link to="/categories">
           <img className="eachBook" src={imgSrc} alt="child" />
           <p className="bookDesc">
-            출간일 : <br /> {date}
+            평점: {rating} <br />
+            {name}
           </p>
         </Link>
       </div>
@@ -18,4 +20,4 @@ export class NewBook extends Component {
   }
 }
 
-export default NewBook;
+export default BestBook;

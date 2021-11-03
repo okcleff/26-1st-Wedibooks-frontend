@@ -1,0 +1,53 @@
+@import '../../../styles/variables.scss';
+
+.recommendation {
+  margin-bottom: 50px;
+  padding: 30px 0px;
+  background-color: linen;
+
+  .recommendationTitle {
+    margin-bottom: 20px;
+    margin-left: 100px;
+    font-size: 2rem;
+  }
+
+  .recommendationMain {
+    @include flexJustEvenly;
+    position: relative;
+  }
+
+  .recommendedBook {
+    display: flex;
+  }
+
+  .rcmDesc {
+    @include flexAlignCenter;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 50px;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  .headDesc {
+    color: gray;
+  }
+
+  .detailDesc {
+    font-size: 2rem;
+  }
+
+  .rcmBookImg {
+    width: 300px;
+    height: 400px;
+    margin-left: 50px;
+    transition: all 0.1s linear;
+  }
+
+  .rcmBookImg:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}

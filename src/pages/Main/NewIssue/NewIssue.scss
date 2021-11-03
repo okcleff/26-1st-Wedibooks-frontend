@@ -1,0 +1,54 @@
+@import '../../../styles/variables.scss';
+
+.newIssue {
+  margin-bottom: 50px;
+  padding: 30px 100px;
+  background-color: linen;
+  position: relative;
+
+  .newIssueTitle {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+
+  .newIssueGrid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .bookNDesc {
+    display: flex;
+  }
+
+  .eachBook {
+    margin-bottom: 10px;
+    width: 150px;
+    height: 200px;
+    transition: all 0.1s linear;
+  }
+
+  .eachBook:hover {
+    transform: scale(1.1);
+  }
+
+  .bookDesc {
+    width: 150px;
+    height: 60px;
+  }
+
+  a {
+    text-decoration: none;
+    text-align: center;
+  }
+
+  a:visited {
+    color: black;
+  }
+
+  .showBtnWrapper {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+  }
+}

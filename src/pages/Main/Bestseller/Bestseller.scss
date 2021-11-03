@@ -1,0 +1,48 @@
+@import '../../../styles/variables.scss';
+
+.bestSeller {
+  margin-bottom: 50px;
+  padding: 30px 100px;
+  background-color: linen;
+  position: relative;
+
+  .bestSellerTitle {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+
+  .bestSellerGrid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .bookNDesc {
+    display: flex;
+  }
+
+  .eachBook {
+    margin-bottom: 10px;
+    width: 150px;
+    height: 200px;
+    transition: all 0.1s linear;
+  }
+
+  .eachBook:hover {
+    transform: scale(1.1);
+  }
+
+  .bookDesc {
+    width: 150px;
+    height: 60px;
+  }
+
+  a {
+    text-decoration: none;
+    text-align: center;
+  }
+
+  a:visited {
+    color: black;
+  }
+}

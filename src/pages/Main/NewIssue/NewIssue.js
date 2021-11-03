@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import NewBook from './NewBook';
+import { AiOutlineDoubleLeft } from 'react-icons/ai';
+import { AiOutlineDoubleRight } from 'react-icons/ai';
+import './NewIssue.scss';
 
 export class NewIssue extends Component {
   constructor() {
     super();
     this.state = {
-      NewIssueList: [],
+      newIssueList: [],
       startIndex: 0,
       endIndex: 5,
     };
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/NewIssueList.json', {
-      method: 'GET',
-    })
+    fetch('./data/NewIssueList.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
-          NewIssueList: data,
+          newIssueList: data,
         });
       });
   }
@@ -41,41 +42,37 @@ export class NewIssue extends Component {
   };
 
   render() {
-    const { NewIssueList, startIndex, endIndex } = this.state;
+    const { newIssueList, startIndex, endIndex } = this.state;
     const { showBefore, showAfter } = this;
 
     return (
       <div className="newIssue">
         <h1 className="newIssueTitle">집 앞 서점에 방금 나온 신간!</h1>
+        <button
+          type="button"
+          onClick={showBefore}
+          className="beforeButton"
+          disabled={startIndex === 0 ? true : false}
+        >
+          <AiOutlineDoubleLeft size="24" />
+        </button>
+
         <div className="newIssueGrid">
-          {NewIssueList.slice(startIndex, endIndex).map(NewIssueList => {
+          {newIssueList.slice(startIndex, endIndex).map(newIssueList => {
             return (
-              <NewBook
-                key={NewIssueList.id}
-                imgSrc={NewIssueList.imgSrc}
-                date={NewIssueList.issueDate}
-              />
+              <NewBook key={newIssueList.id} newIssueList={newIssueList} />
             );
           })}
         </div>
-        <div className="showBtnWrapper">
-          <button
-            type="button"
-            onClick={showBefore}
-            className="showButton"
-            disabled={startIndex === 0 ? true : false}
-          >
-            이전 5개
-          </button>
-          <button
-            type="button"
-            onClick={showAfter}
-            className="showButton"
-            disabled={endIndex === 20 ? true : false}
-          >
-            다음 5개
-          </button>
-        </div>
+
+        <button
+          type="button"
+          onClick={showAfter}
+          className="afterButton"
+          disabled={endIndex === 20 ? true : false}
+        >
+          <AiOutlineDoubleRight size="24" />
+        </button>
       </div>
     );
   }
