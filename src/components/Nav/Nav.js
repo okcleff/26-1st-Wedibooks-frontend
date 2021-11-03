@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 export class Nav extends Component {
   render() {
-    return <div>nav</div>;
+    return <div />;
   }
 }
 

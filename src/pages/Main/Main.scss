@@ -1,0 +1,161 @@
+@import '../../styles/variables.scss';
+
+.main {
+  margin-top: 166px;
+
+  /* Bestseller.js */
+  .bestSeller {
+    margin-bottom: 50px;
+    padding: 30px 100px;
+    background-color: linen;
+
+    .bestSellerTitle {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .bestSellerGrid {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  /* NewIssue.js */
+  .newIssue {
+    margin-bottom: 50px;
+    padding: 30px 100px;
+    background-color: linen;
+
+    .newIssueTitle {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .newIssueGrid {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  .recommendation {
+    margin-bottom: 50px;
+    padding: 30px 100px;
+    background-color: linen;
+
+    .recommendationTitle {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .recommendationGrid {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  .bookNDesc {
+    display: flex;
+  }
+
+  .eachBook {
+    width: 150px;
+    height: 200px;
+  }
+
+  .eachBook:hover {
+    width: 165px;
+    height: 220px;
+  }
+
+  .bookDesc {
+    width: 150px;
+    height: 60px;
+  }
+
+  a {
+    text-decoration: none;
+    text-align: center;
+  }
+
+  a:visited {
+    color: black;
+  }
+
+  .showBtnWrapper {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .showButton {
+    border: none;
+    background-color: $endColor;
+    color: white;
+    font-size: 1rem;
+  }
+
+  .showButton:disabled {
+    background-color: lightgray;
+  }
+
+  .showButton:hover {
+    cursor: pointer;
+  }
+
+  .wrap {
+    width: 80%;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .hex {
+    width: 25%;
+    margin-bottom: 1.8%;
+    position: relative;
+    visibility: hidden;
+  }
+
+  .hex:nth-of-type(7n + 5) {
+    margin-left: 12.5%;
+  }
+
+  .hex::after {
+    content: '';
+    display: block;
+    padding-bottom: 80%;
+  }
+
+  .hex-inner {
+    position: absolute;
+    width: 99%;
+    padding-bottom: 114.6%;
+    overflow: hidden;
+    visibility: hidden;
+    transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+  }
+
+  .hex-inner * {
+    position: absolute;
+    visibility: visible;
+  }
+
+  .content {
+    @include flexJustCenter;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+    background: #02b4cd80;
+    align-items: center;
+  }
+
+  .content p {
+    font-size: 3vw;
+    text-align: center;
+    color: #fff;
+  }
+}
