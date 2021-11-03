@@ -2,79 +2,86 @@
 @import '../../styles/common.scss';
 
 .totalBox {
-  margin-left: 300px;
+  background-color: #f5f6f8;
 
   .BookContainer {
-    margin-left: 10px;
-    margin-top: 166px;
-    display: flex;
-    border: 1px solid black;
-    font-size: 20px;
+    @include flexAlignCenter;
+    justify-content: center;
     width: 800px;
     height: 400px;
-    justify-content: center;
-    align-items: center;
+    margin-left: 300px;
+    margin-top: 166px;
+    // border: 1px solid black;
+    font-size: 20px;
 
     .imageBox {
-      border: 1px solid blue;
-      width: 400px;
-      height: 400px;
-      display: flex;
+      @include flexAlignCenter;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      // border: 1px solid blue;
+      width: 350px;
+      height: 400px;
     }
 
     .book1 {
-      width: 80%;
-      height: 80%;
+      height: 65%;
+      border-radius: 2px;
+      box-shadow: 5px 5px 5px gray;
     }
 
     .previousView {
+      width: 90px;
+      height: 35px;
       margin: 10px;
+      font-size: 15px;
+      font-weight: 700;
     }
   }
 
   .RightBox {
-    border: 1px solid red;
-    width: 400px;
+    // border: 1px solid red;
+    width: 450px;
     height: 400px;
 
     .bookExplanation {
       width: 400px;
       height: 230px;
-      border: 1px solid purple;
+      // border: 1px solid purple;
 
       .firstCategory {
-        font-size: 15px;
         margin-top: 15px;
+        font-size: 15px;
       }
 
       .bookTitle {
+        margin-top: 15px;
         font-size: 35px;
         font-weight: 700;
-        margin-top: 15px;
       }
 
       .starRating {
+        display: flex;
         margin-top: 25px;
+        color: #ff4242;
       }
 
       .bookAuthor {
-        font-size: 20px;
         margin-top: 25px;
+        font-size: 20px;
       }
 
       .bookCompany {
-        font-size: 20px;
         margin-top: 10px;
+        font-size: 20px;
       }
     }
 
     .bookPrice {
+      padding-top: 24px;
       width: 400px;
       height: 70px;
-      border: 1px solid orange;
+      font-weight: 700;
+      // border: 1px solid orange;
     }
     .purchaseButtons {
       display: flex;
@@ -83,60 +90,102 @@
   }
 
   .userReviews {
-    margin-left: 10px;
+    margin-left: 300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     width: 800px;
-    height: 200px;
-    border: 1px solid hotpink;
+    height: 150px;
+    // border: 1px solid hotpink;
+
+    .reviewTitle {
+      margin-top: 5px;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .reviewName {
+      margin-left: 85px;
+    }
 
     hr {
-      width: 800px;
+      margin-left: 85px;
+      width: 715px;
     }
 
     .starBox {
+      margin-left: 42px;
+      margin-top: 15px;
+      margin-bottom: 15px;
       width: 800px;
-      height: 80px;
+      height: 50px;
+      text-align: center;
+      line-height: 25px;
     }
 
     .reviewBox {
       display: flex;
+      justify-content: flex-end;
       width: 800px;
       height: 60px;
-      border: 1px solid hotpink;
+      // border: 1px solid hotpink;
 
       .leftStars {
+        margin-top: 3px;
         width: 100px;
-        height: 60px;
-        border: 1px solid blue;
+        height: 50px;
+        // border: 1px solid blue;
+        line-height: 45px;
       }
 
       .reviewInput {
-        width: 600px;
-        height: 60px;
-        border: 1px solid blue;
+        margin-top: 10px;
+        width: 530px;
+        height: 40px;
+        // border: 1px solid blue;
       }
 
       .itemAdd {
-        width: 90px;
-        height: 50px;
-        margin: 5px;
+        margin: 10px;
+        width: 70px;
+        height: 40px;
+        font-size: 13px;
+        font-weight: 700;
       }
     }
   }
 
   .reviewsList {
-    margin-left: 10px;
+    margin-left: 300px;
     width: 800px;
     height: 100px;
-    border: 1px solid skyblue;
+    // border: 1px solid skyblue;
+
+    .users {
+      margin-top: 5px;
+      margin-left: 85px;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    hr {
+      margin-left: 85px;
+      width: 715px;
+    }
 
     .lastReviewContainer {
       display: flex;
 
       .leftlists {
+        margin-left: 85px;
         width: 100px;
         height: 60px;
-        border: 1px solid blue;
+        // border: 1px solid blue;
+        line-height: 55px;
       }
+    }
+
+    .itemText {
+      line-height: 55px;
     }
   }
 }

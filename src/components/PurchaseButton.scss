@@ -1,8 +1,21 @@
 @import '../styles/common.scss';
 
-.purchaseButtons {
-  img {
-    width: 100%;
-    height: 100%;
+button {
+  width: 110px;
+  height: 40px;
+  background-color: #f9b418;
+  border: none;
+  color: white;
+  border-radius: 5px;
+
+  .button:hover {
+    background: tomato;
+    color: white;
+  }
+  .fontAwesome {
+    margin: auto;
+    justify-content: center;
+    width: 70%;
+    height: 70%;
   }
 }

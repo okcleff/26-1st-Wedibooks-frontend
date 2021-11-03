@@ -5,7 +5,7 @@ class BookBorrow extends Component {
   render() {
     return (
       <button className="bookBorrow" type="button">
-        대여하기
+        {this.props.title}
       </button>
     );
   }
