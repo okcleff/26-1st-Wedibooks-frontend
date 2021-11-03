@@ -1,0 +1,12 @@
+@import '../styles/common.scss';
+
+.bookIntroduction {
+  margin-left: 10px;
+  width: 800px;
+  height: 100px;
+  border: 1px solid blue;
+
+  hr {
+    width: 800px;
+  }
+}
