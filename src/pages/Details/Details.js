@@ -6,6 +6,7 @@ import BookBorrow from '../../components/BookBorrow';
 import StarRating from '../../components/StarRating';
 
 import './Details.scss';
+
 class Details extends Component {
   render() {
     return (
@@ -33,8 +34,8 @@ class Details extends Component {
             </div>
             <div className="bookPrice">판매가</div>
             <div className="purchaseButtons">
-              <PurchaseButton />
-              <PurchaseButton />
+              <PurchaseButton cart />
+              <PurchaseButton heart />
               <BookBorrow title="대여하기" />
               <BookBorrow title="구매하기" />
             </div>

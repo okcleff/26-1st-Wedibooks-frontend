@@ -1,0 +1,29 @@
+@import '../styles/common.scss';
+
+.cartBoxThirdLine {
+  display: flex;
+  justify-content: space-between;
+  height: 160px;
+
+  .cartBookImage .book2 {
+    margin-top: 10px;
+    margin-left: -130px;
+    height: 85%;
+    border-radius: 2px;
+    box-shadow: 5px 5px 5px gray;
+  }
+
+  .bookBoxContents {
+    .bookTitle {
+      flex-direction: column;
+      margin-top: 10px;
+      margin-left: -150px;
+      list-style: none;
+    }
+
+    .bookPrice {
+      margin-top: 10px;
+      margin-right: 50px;
+    }
+  }
+}
