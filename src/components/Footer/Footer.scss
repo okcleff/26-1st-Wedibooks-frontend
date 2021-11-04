@@ -1,6 +1,55 @@
+@font-face {
+  font-family: 'KoPubDotumMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 footer {
-  height: 300px;
+  font-family: 'KoPubDotumMedium';
+  position: fixed;
+  height: 270px;
   width: 100%;
   bottom: 0;
-  background-color: #fd6336;
+  background-color: #fb8928;
+  section {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    width: 45%;
+    height: 270px;
+    margin: auto;
+    margin-top: 30px;
+    // background-color: pink;
+    color: linen;
+    .callNotice {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      .line {
+        margin-left: 5px;
+        margin-right: 5px;
+        color: lightgray;
+        font-weight: bold;
+      }
+    }
+    .footerList {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      column-gap: 30px;
+      row-gap: 30px;
+      font-weight: bold;
+    }
+    .information {
+      .wediInfo {
+        display: block;
+        margin-bottom: 10px;
+      }
+      span {
+        font-size: 12px;
+      }
+    }
+  }
 }
