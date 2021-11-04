@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Nav from './components/Nav/Nav';
-import login from './pages/Login/login';
-import signUp from './pages/SignUp/signUp';
+import Login from './pages/Login/Login';
+import SignUp from './pages/SignUp/SignUp';
 
 export class Routes extends Component {
   render() {
     return (
       <Router>
-        <Nav />
         <Switch>
-          <Route exact path="/" component={signUp} />
+          <Route exact path="/" component={SignUp} />
         </Switch>
       </Router>
     );

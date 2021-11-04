@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "className": "inputId",
+    "inputType": "text",
+    "name": "id",
+    "placeholder": "아이디",
+    "maxLength": "25"
+  },
+
+  {
+    "id": 2,
+    "className": "inputPw",
+    "inputType": "password",
+    "name": "pw",
+    "placeholder": "비밀번호",
+    "maxLength": "10"
+  },
+
+  {
+    "id": 3,
+    "className": "inputPwCheck",
+    "inputType": "password",
+    "placeholder": "비밀번호확인"
+  },
+
+  {
+    "id": 4,
+    "className": "inputEmail",
+    "inputType": "text",
+    "placeholder": "이메일 주소"
+  },
+
+  {
+    "id": 5,
+    "className": "inputName",
+    "inputType": "text",
+    "placeholder": "이름"
+  }
+]

@@ -1,106 +1,73 @@
 @import '../../styles/variables.scss';
-@import '../../styles/reset.scss';
 
 * {
   border-style: #b0a8b9;
   background-color: #ebf6ff;
 
-  .signIn {
+  .signInBody {
+    @include flexAlignCenter;
+    justify-content: center;
     width: 100%;
+    height: 100%;
+    background-color: #ebf6ff;
+  }
+  .signInSection {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding-top: 50px;
 
-    .signInHeader {
-      width: 100%;
-      margin: 0;
-      border-top: #d7e8f0 solid 1px;
-      border-bottom: #d7e8f0 solid 1px;
-      text-align: center;
-      padding-top: 15px;
-      padding-bottom: 15px;
+    input {
+      height: 50px;
+      background-color: white;
+      border-radius: 5px;
+      border-color: #d7e8f0;
+    }
 
-      .logo {
-        font-size: 1rem;
-        font-weight: 900;
-        text-decoration: none;
-        color: #2c73d2;
+    .inputId {
+      margin: 30px 0 10px;
+    }
+
+    .inputPwCheck {
+      margin-top: 0px;
+      margin-bottom: 10px;
+    }
+
+    .inputEmail {
+      margin-bottom: 10px;
+    }
+
+    .choosePtag {
+      padding-top: 20px;
+      font-size: smaller;
+    }
+
+    .birthYearSex {
+      margin: 10px 0 20px;
+
+      .inputBirthYear {
+        margin-right: 10px;
       }
-    }
 
-    .signInBody {
-      width: 100%;
-      height: 100%;
-      @include flexAlignCenter;
-      justify-content: center;
-      background-color: #ebf6ff;
-    }
-    .signInSection {
-      display: flex;
-      flex-direction: column;
-      padding-top: 50px;
-      width: 400px;
-
-      input {
+      .buttonMaleFemale {
+        width: 100px;
         height: 50px;
+        border-color: #d7e8f0;
         background-color: white;
         border-radius: 5px;
-        border-color: #d7e8f0;
-      }
-
-      .inputId {
-        margin-top: 30px;
-        margin-bottom: 10px;
-      }
-
-      .inputPwCheck {
-        margin-top: 0px;
-        margin-bottom: 10px;
-      }
-
-      .inputEmail {
-        margin-bottom: 10px;
-      }
-
-      .choosePtag {
-        padding-top: 20px;
-        font-size: smaller;
-      }
-
-      .birthYearSex {
-        margin-top: 10px;
-        margin-bottom: 20px;
-
-        .inputBirthYear {
-          margin-right: 10px;
-        }
-
-        .buttonMale {
-          width: 100px;
-          cursor: pointer;
-          height: 50px;
-          border-color: #d7e8f0;
-          background-color: white;
-          border-radius: 5px;
-        }
-
-        .buttonFemale {
-          width: 100px;
-          cursor: pointer;
-          height: 50px;
-          margin-right: 0;
-          border-color: #d7e8f0;
-          background-color: white;
-          border-radius: 5px;
-        }
+        cursor: pointer;
       }
     }
+
     .signInbutton {
-      cursor: pointer;
-      margin-top: 10px;
       height: 55px;
+      margin-top: 10px;
       background-color: #2c73d2;
       color: white;
-      font-size: 20px;
       border-radius: 5px;
       border: 0px;
+      font-size: 20px;
+      cursor: pointer;
     }
   }
 }

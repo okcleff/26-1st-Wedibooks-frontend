@@ -1,42 +1,42 @@
 import React, { Component } from 'react';
+import UserNav from '../../components/userNav/userNav';
+import InputData from './InputData';
 import './signUp.scss';
 
-export class signUp extends Component {
+export class SignUp extends Component {
+  constructor() {
+    super();
+    this.state = {
+      inputList: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('./data/inputList.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          inputList: data,
+        });
+      });
+  }
+
   render() {
+    const { inputList } = this.state;
     return (
-      <div className="signIn">
-        <header className="signInHeader">
-          <a href="/" className="logo">
-            RIDIBOOKS
-          </a>
-        </header>
-        <body className="signInBody">
+      <>
+        <UserNav />
+        <div className="signInBody">
           <section className="signInSection">
-            <input
-              className="inputId"
-              type="text"
-              name="id"
-              placeholder="아이디"
-              maxLength="25"
-            />
-            <input
-              className="inputPw"
-              type="password"
-              name="pw"
-              placeholder="비밀번호"
-              maxLength="10"
-            />
-            <input
-              className="inputPwCheck"
-              type="password"
-              placeholder="비밀번호 확인"
-            />
-            <input
-              className="inputEmail"
-              type="text"
-              placeholder="이메일 주소"
-            />
-            <input className="inputName" type="text" placeholder="이름" />
+            {inputList.map(inputList => {
+              return (
+                <InputData
+                  key={inputList.id}
+                  inputType={inputList.inputType}
+                  placeholder={inputList.placeholder}
+                />
+              );
+            })}
             <p className="choosePtag">선택 입력</p>
             <div className="birthYearSex">
               <input
@@ -45,16 +45,16 @@ export class signUp extends Component {
                 placeholder="출생년도"
               />
               <span className="MenWomen">
-                <button className="buttonMale">남</button>
-                <button className="buttonFemale">여</button>
+                <button className="buttonMaleFemale">남</button>
+                <button className="buttonMaleFemale">여</button>
               </span>
             </div>
             <button className="signInbutton">회원 가입 완료</button>
           </section>
-        </body>
-      </div>
+        </div>
+      </>
     );
   }
 }
 
-export default signUp;
+export default SignUp;
