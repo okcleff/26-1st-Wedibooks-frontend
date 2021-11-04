@@ -1,0 +1,22 @@
+.aside {
+  width: 200px;
+
+  .bigCategory {
+    border: 1px solid black;
+    margin-bottom: 50px;
+  }
+
+  .bigCategoryName {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .bigCategoryName:hover {
+    cursor: pointer;
+    background-color: lightgray;
+  }
+
+  .eachCategory {
+    margin: 10px 0px;
+  }
+}

@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
+import './Categories.scss';
+import Aside from './Aside/Aside';
 
 export class Categories extends Component {
   render() {
-    return <div>여기는 카테고리 입니다.</div>;
+    return (
+      <div className="categories">
+        <Aside />
+      </div>
+    );
   }
 }
 
