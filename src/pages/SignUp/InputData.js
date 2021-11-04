@@ -5,7 +5,11 @@ export class InputData extends Component {
     const { inputType, placeholder } = this.props;
     return (
       <div>
-        <input type={inputType} placeholder={placeholder} />{' '}
+        <input
+          className="inputData"
+          type={inputType}
+          placeholder={placeholder}
+        />{' '}
       </div>
     );
   }
