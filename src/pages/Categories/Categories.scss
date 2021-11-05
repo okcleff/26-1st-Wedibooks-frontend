@@ -1,6 +1,45 @@
 @import '../../styles/variables.scss';
 
 .categories {
+  display: flex;
   margin-top: 166px;
-  padding: 30px 100px;
+  padding: 30px 150px;
+
+  .bookIcon {
+    margin-right: 10px;
+  }
+
+  .categoryName {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+
+  .bestsellerTitle {
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid $endColor;
+    font-size: 1.2rem;
+  }
+
+  .bestsellerWrap {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 40px;
+  }
+
+  .bookImg {
+    margin-bottom: 10px;
+    width: 120px;
+    height: 160px;
+  }
+
+  .categoryBestseller {
+    @include flexDirectColumn;
+    text-align: center;
+  }
+
+  .numbering {
+    margin-bottom: 5px;
+    color: gray;
+  }
 }

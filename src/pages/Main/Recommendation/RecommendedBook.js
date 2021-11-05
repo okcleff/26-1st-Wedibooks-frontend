@@ -3,9 +3,8 @@ import React, { Component } from 'react';
 
 export class RecommendedBook extends Component {
   render() {
-    const { recommendationList } = this.props;
     const { headDesc, detailDesc1, detailDesc2, imgSrc, name } =
-      recommendationList;
+      this.props.recommendationList;
 
     return (
       <div className="recommendedBook">

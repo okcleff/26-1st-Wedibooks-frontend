@@ -1,22 +1,39 @@
+@import '../../../styles/variables.scss';
+
 .aside {
-  width: 200px;
+  margin-right: 70px;
 
   .bigCategory {
-    border: 1px solid black;
+    @include flexDirectColumn;
     margin-bottom: 50px;
   }
 
   .bigCategoryName {
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    width: 200px;
+    height: 40px;
     margin-bottom: 15px;
-  }
-
-  .bigCategoryName:hover {
-    cursor: pointer;
-    background-color: lightgray;
+    padding-left: 10px;
+    color: white;
+    background-color: $endColor;
+    font-size: 1.5rem;
   }
 
   .eachCategory {
-    margin: 10px 0px;
+    margin: 15px 0px;
+  }
+
+  .categoryLink {
+    text-decoration: none;
+  }
+
+  .categoryLink:visited {
+    color: #808991;
+  }
+
+  .categoryLink:hover {
+    color: $endColor;
   }
 }

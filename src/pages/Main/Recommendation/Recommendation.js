@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import RecommendedBook from './RecommendedBook';
-import { AiOutlineDoubleLeft } from 'react-icons/ai';
-import { AiOutlineDoubleRight } from 'react-icons/ai';
+import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from 'react-icons/ai';
 import './Recommendation.scss';
 
 export class Recommendation extends Component {

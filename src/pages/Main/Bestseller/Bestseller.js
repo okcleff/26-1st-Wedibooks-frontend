@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import BestBook from './BestBook';
-import { AiOutlineDoubleLeft } from 'react-icons/ai';
-import { AiOutlineDoubleRight } from 'react-icons/ai';
+import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from 'react-icons/ai';
 import './Bestseller.scss';
 
 export class Bestseller extends Component {
@@ -15,7 +14,7 @@ export class Bestseller extends Component {
   }
 
   componentDidMount() {
-    fetch('./data/BestsellerList.json')
+    fetch('./data/BestsellerListAll.json')
       .then(res => res.json())
       .then(data => {
         this.setState({

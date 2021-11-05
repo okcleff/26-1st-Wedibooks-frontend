@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 export class BestBook extends Component {
   render() {
-    const { bestsellerList } = this.props;
-    const { imgSrc, name, rating } = bestsellerList;
+    const { imgSrc, name, rating } = this.props.bestsellerList;
 
     return (
       <div className="bookNDesc">

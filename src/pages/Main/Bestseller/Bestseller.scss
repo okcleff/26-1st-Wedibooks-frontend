@@ -37,6 +37,41 @@
     height: 60px;
   }
 
+  .beforeButton,
+  .afterButton {
+    height: 40px;
+    border: none;
+    background-color: linen;
+  }
+
+  .beforeButton {
+    position: absolute;
+    top: 45%;
+    left: 10px;
+  }
+
+  .beforeButton:disabled {
+    display: none;
+  }
+
+  .beforeButton:hover {
+    cursor: pointer;
+  }
+
+  .afterButton {
+    position: absolute;
+    top: 45%;
+    right: 10px;
+  }
+
+  .afterButton:disabled {
+    display: none;
+  }
+
+  .afterButton:hover {
+    cursor: pointer;
+  }
+
   a {
     text-decoration: none;
     text-align: center;

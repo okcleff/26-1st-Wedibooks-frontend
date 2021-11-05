@@ -2,71 +2,87 @@
   {
     "id": 1,
     "imgSrc": "https://cdn.pixabay.com/photo/2015/06/22/08/39/child-817371__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "책 설명입니다. 책 설명입니다.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   },
   {
     "id": 2,
     "imgSrc": "https://cdn.pixabay.com/photo/2021/07/24/15/47/venice-6489813__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "Hi there.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   },
   {
     "id": 3,
     "imgSrc": "https://cdn.pixabay.com/photo/2020/06/10/07/56/sky-5281668__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "Hey.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   },
   {
     "id": 4,
     "imgSrc": "https://cdn.pixabay.com/photo/2019/07/01/16/58/tanzania-4310438__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "Hey.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   },
   {
     "id": 5,
     "imgSrc": "https://cdn.pixabay.com/photo/2017/08/02/12/44/bag-2571416__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "Hey.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   },
   {
     "id": 6,
     "imgSrc": "https://cdn.pixabay.com/photo/2019/10/19/12/21/hot-air-balloons-4561264__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "Hey.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   },
   {
     "id": 7,
     "imgSrc": "https://cdn.pixabay.com/photo/2020/01/22/07/33/hot-4784635__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "책 설명입니다. 책 설명입니다.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   },
   {
     "id": 8,
     "imgSrc": "https://cdn.pixabay.com/photo/2019/05/26/22/43/puppies-4231472__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "책 설명입니다. 책 설명입니다.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   },
   {
     "id": 9,
     "imgSrc": "https://cdn.pixabay.com/photo/2021/08/06/18/46/dog-6526980__480.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "책 설명입니다. 책 설명입니다.",
     "author": "작가 미상",
     "rating": "4.5"
@@ -74,7 +90,7 @@
   {
     "id": 10,
     "imgSrc": "https://cdn.pixabay.com/photo/2020/12/15/16/25/clock-5834193__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "책 설명입니다. 책 설명입니다.",
     "author": "작가 미상",
     "rating": "4.5"
@@ -82,39 +98,47 @@
   {
     "id": 11,
     "imgSrc": "https://cdn.pixabay.com/photo/2021/07/05/11/05/pink-beach-6388864__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "책 설명입니다. 책 설명입니다.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   },
   {
     "id": 12,
     "imgSrc": "https://cdn.pixabay.com/photo/2020/07/14/13/42/boat-5404195__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "책 설명입니다. 책 설명입니다.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   },
   {
     "id": 13,
     "imgSrc": "https://cdn.pixabay.com/photo/2017/09/02/15/10/lighthouse-2707528__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "책 설명입니다. 책 설명입니다.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   },
   {
     "id": 14,
     "imgSrc": "https://cdn.pixabay.com/photo/2021/01/23/13/01/hills-5942468__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "책 설명입니다. 책 설명입니다.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   },
   {
     "id": 15,
     "imgSrc": "https://cdn.pixabay.com/photo/2021/04/05/13/10/cherry-blossoms-6153384__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "책 설명입니다. 책 설명입니다.",
     "author": "작가 미상",
     "rating": "4.5"
@@ -122,41 +146,51 @@
   {
     "id": 16,
     "imgSrc": "https://cdn.pixabay.com/photo/2019/06/29/01/24/kid-4305233__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "책 설명입니다. 책 설명입니다.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   },
   {
     "id": 17,
     "imgSrc": "https://cdn.pixabay.com/photo/2020/06/21/09/52/abendstimmung-5324159__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "책 설명입니다. 책 설명입니다.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   },
   {
     "id": 18,
     "imgSrc": "https://cdn.pixabay.com/photo/2020/10/23/16/50/woman-5679284__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "책 설명입니다. 책 설명입니다.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   },
   {
     "id": 19,
     "imgSrc": "https://cdn.pixabay.com/photo/2017/04/04/18/07/ice-cream-2202561__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "책 설명입니다. 책 설명입니다.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   },
   {
     "id": 20,
     "imgSrc": "https://cdn.pixabay.com/photo/2017/08/07/07/18/table-2600954__340.jpg",
-    "name": "책 제목",
+    "name": "한국 소설",
     "desc": "책 설명입니다. 책 설명입니다.",
     "author": "작가 미상",
-    "rating": "4.5"
+    "rating": "4.5",
+    "bigCategory": "소설",
+    "smallCategory": "한국 소설"
   }
 ]

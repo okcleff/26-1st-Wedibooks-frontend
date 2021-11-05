@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 export class NewBook extends Component {
   render() {
-    const { newIssueList } = this.props;
-    const { imgSrc, issueDate, name } = newIssueList;
+    const { imgSrc, issueDate, name } = this.props.newIssueList;
 
     return (
       <div className="bookNDesc">
