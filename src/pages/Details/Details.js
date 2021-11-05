@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-import BookIntroduction from '../../components/BookIntroduction';
-import PurchaseButton from '../../components/PurchaseButton';
-import BookBorrow from '../../components/BookBorrow';
-import StarRating from '../../components/StarRating';
+import BookIntroduction from './BookIntroduction/BookIntroduction';
+import BookBorrow from './BookBorrow/BookBorrow';
+import StarRating from './StarRating/StarRating';
+import { BsFillSuitHeartFill } from 'react-icons/bs';
+import { RiShoppingCartFill } from 'react-icons/ri';
 
 import './Details.scss';
 
@@ -18,24 +18,28 @@ class Details extends Component {
               alt="book1"
               src="https://cdn.pixabay.com/photo/2015/06/22/08/39/child-817371__340.jpg"
             />
-            <button className="previousView" type="button">
-              미리보기
-            </button>
+            <BookBorrow title="미리보기" />
           </div>
           <div className="RightBox">
-            <div className="bookExplanation">
-              <div className="firstCategory">소설 > 한국소설</div>
-              <div className="bookTitle">피에 젖은 땅, 국경. 제1권</div>
-              <div className="starRating">
+            <ul className="bookExplanation">
+              <li className="firstCategory">소설 > 한국소설</li>
+              <li className="bookTitle">피에 젖은 땅, 국경. 제1권</li>
+              <li className="starRating">
                 <StarRating />
-              </div>
-              <div className="bookAuthor">조혜경 저</div>
-              <div className="bookCompany">유페이퍼 출판</div>
-            </div>
+              </li>
+              <li className="bookAuthor">조혜경 저</li>
+              <li className="bookCompany">유페이퍼 출판</li>
+            </ul>
             <div className="bookPrice">판매가</div>
-            <div className="purchaseButtons">
-              <PurchaseButton cart />
-              <PurchaseButton heart />
+            <div className="buttonBox">
+              <div className="purchaseButtons">
+                <button className="manyButtons" type="button">
+                  <BsFillSuitHeartFill className="heartIcon" />
+                </button>
+                <button className="manyButtons" type="button">
+                  <RiShoppingCartFill className="cartIcon" />
+                </button>
+              </div>
               <BookBorrow title="대여하기" />
               <BookBorrow title="구매하기" />
             </div>
@@ -62,9 +66,7 @@ class Details extends Component {
                 type="text"
                 placeholder="리뷰 작성 시 광고 및 욕설, 비속어나 타인을 비방하는 문구를 사용하시면 비공개될 수 있습니다."
               />
-              <button className="itemAdd" type="button">
-                리뷰 작성
-              </button>
+              <BookBorrow title="리뷰작성" />
             </div>
           </div>
         </div>
@@ -73,9 +75,11 @@ class Details extends Component {
           <div className="users">구매자</div>
           <hr />
           <div className="lastReviewContainer">
-            <div className="leftlists">
-              <StarRating />
-            </div>
+            <ul className="leftlists">
+              <li>
+                <StarRating />
+              </li>
+            </ul>
             <ul className="reviewItems">
               <li className="itemDetails">
                 <span className="itemText">이곳에 리뷰를 남겨주세요!</span>
@@ -88,4 +92,4 @@ class Details extends Component {
   }
 }
 
-export default withRouter(Details);
+export default Details;

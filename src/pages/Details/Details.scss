@@ -1,5 +1,4 @@
 @import '../../styles/variables.scss';
-@import '../../styles/common.scss';
 
 .totalBox {
   background-color: #f5f6f8;
@@ -7,18 +6,13 @@
   .BookContainer {
     @include flexAlignCenter;
     justify-content: center;
-    width: 800px;
-    height: 400px;
-    margin-left: 300px;
     margin-top: 166px;
-    // border: 1px solid black;
     font-size: 20px;
 
     .imageBox {
       @include flexAlignCenter;
       flex-direction: column;
       justify-content: center;
-      // border: 1px solid blue;
       width: 350px;
       height: 400px;
     }
@@ -30,23 +24,21 @@
     }
 
     .previousView {
+      margin: 10px;
       width: 90px;
       height: 35px;
-      margin: 10px;
       font-size: 15px;
       font-weight: 700;
     }
   }
 
   .RightBox {
-    // border: 1px solid red;
     width: 450px;
     height: 400px;
 
     .bookExplanation {
       width: 400px;
       height: 230px;
-      // border: 1px solid purple;
 
       .firstCategory {
         margin-top: 15px;
@@ -67,7 +59,8 @@
 
       .bookAuthor {
         margin-top: 25px;
-        font-size: 20px;
+        font-size: 22px;
+        font-weight: 700;
       }
 
       .bookCompany {
@@ -81,21 +74,36 @@
       width: 400px;
       height: 70px;
       font-weight: 700;
-      // border: 1px solid orange;
     }
-    .purchaseButtons {
+
+    .buttonBox {
       display: flex;
-      margin: 5px;
+      .purchaseButtons {
+        .manyButtons {
+          margin-top: 10px;
+          margin-left: 5px;
+          width: 40px;
+          height: 40px;
+          border: none;
+          border-radius: 5px;
+          color: white;
+          background-color: #f9b418;
+
+          .heartIcon,
+          .cartIcon {
+            font-size: x-large;
+          }
+        }
+      }
     }
   }
 
   .userReviews {
-    margin-left: 300px;
+    margin-left: 430px;
     margin-top: 50px;
     margin-bottom: 50px;
     width: 800px;
     height: 150px;
-    // border: 1px solid hotpink;
 
     .reviewTitle {
       margin-top: 5px;
@@ -127,13 +135,11 @@
       justify-content: flex-end;
       width: 800px;
       height: 60px;
-      // border: 1px solid hotpink;
 
       .leftStars {
         margin-top: 3px;
         width: 100px;
         height: 50px;
-        // border: 1px solid blue;
         line-height: 45px;
       }
 
@@ -141,7 +147,6 @@
         margin-top: 10px;
         width: 530px;
         height: 40px;
-        // border: 1px solid blue;
       }
 
       .itemAdd {
@@ -155,10 +160,9 @@
   }
 
   .reviewsList {
-    margin-left: 300px;
+    margin-left: 430px;
     width: 800px;
     height: 100px;
-    // border: 1px solid skyblue;
 
     .users {
       margin-top: 5px;
@@ -179,13 +183,12 @@
         margin-left: 85px;
         width: 100px;
         height: 60px;
-        // border: 1px solid blue;
         line-height: 55px;
       }
     }
 
     .itemText {
-      line-height: 55px;
+      line-height: 60px;
     }
   }
 }

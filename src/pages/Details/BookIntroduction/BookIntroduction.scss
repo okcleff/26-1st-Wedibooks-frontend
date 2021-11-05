@@ -1,0 +1,27 @@
+.bookIntroduction {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 430px;
+  width: 800px;
+  height: 100px;
+
+  .titleList {
+    margin-left: 85px;
+  }
+
+  hr {
+    margin-left: 85px;
+    width: 715px;
+  }
+
+  .titleList {
+    margin-top: 5px;
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .text {
+    margin-left: 85px;
+    line-height: 25px;
+  }
+}
