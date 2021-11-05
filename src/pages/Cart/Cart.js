@@ -26,13 +26,13 @@ class Cart extends Component {
             <div className="priceBox">
               <div className="priceDetails">
                 <ul className="totalPrice">
-                  <li className="list1">
+                  <li className="totalList">
                     <AiFillCheckCircle className="checkBoxCircle" />
                     총*권을 선택하셨습니다.
                   </li>
-                  <li className="list2">총 상품 금액</li>
-                  <li className="list3">
-                    <div className="list3Price">합계</div>
+                  <li className="priceList">총 상품 금액</li>
+                  <li className="priceSum">
+                    <div className="purchaseTotalPrice">합계</div>
                   </li>
                 </ul>
               </div>
