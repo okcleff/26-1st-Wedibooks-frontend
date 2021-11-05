@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Router from 'react-router-dom';
 import BuyingButton from './BuyingButton/BuyingButton';
 import { AiFillCheckCircle } from 'react-icons/ai';
 import CartBoxSecondLine from './CartBoxSecondLine/CartBoxSecondLine';
