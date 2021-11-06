@@ -8,10 +8,6 @@ class StarRating extends Component {
     return (
       <div className="starIcons">
         <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
-        <FontAwesomeIcon icon={faStar} />
       </div>
     );
   }

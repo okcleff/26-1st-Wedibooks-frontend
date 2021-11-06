@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "author": "김초엽",
+    "category": "소설",
+    "sub_category": "한국소설",
+    "thumbnail_image_url": "https://cdn.pixabay.com/photo/2015/06/22/08/39/child-817371__340.jpg",
+    "name": "지구 끝의 온실",
+    "publisher": "유페이퍼",
+    "description": "김초엽 첫 장편소설, 모두가 간절히 기다려온 이야기",
+    "index": "1부. 50부터 고생하는 인생",
+    "date_published": "2021.11.12",
+    "price": "12000.00"
+  }
+]

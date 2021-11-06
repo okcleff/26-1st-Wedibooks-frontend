@@ -1,0 +1,59 @@
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .reviewName {
+    margin-left: 165px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    height: 20px;
+    width: 800px;
+  }
+
+  .userLine {
+    margin-left: 75px;
+    width: 715px;
+    border-bottom: 1px solid gray;
+  }
+
+  .starBox {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 50px;
+    margin-left: 85px;
+    text-align: center;
+    line-height: 25px;
+  }
+
+  .startRating {
+    display: flex;
+    margin-top: -15px;
+    margin-left: 25px;
+  }
+
+  .reviewBox {
+    display: flex;
+    margin-left: 95px;
+
+    .starRate {
+      margin-top: 20px;
+      width: 100px;
+      height: 50px;
+    }
+
+    .reviewInput {
+      margin-top: 10px;
+      width: 500px;
+      height: 40px;
+    }
+
+    .itemAdd {
+      margin: 10px;
+      height: 40px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+  }
+}
