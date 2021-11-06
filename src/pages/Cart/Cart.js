@@ -11,7 +11,7 @@ class Cart extends Component {
     super();
     this.state = {
       cartList: [],
-      url: './data/DetailData.json',
+      url: './data/CartData.json',
     };
   }
 
