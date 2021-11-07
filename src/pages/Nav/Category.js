@@ -1,5 +1,4 @@
 /*eslint-disable */
-
 import React, { Component } from 'react';
 import './Category.scss';
 import { MdDoubleArrow } from 'react-icons/md';
@@ -24,13 +23,13 @@ export class Category extends Component {
   render() {
     return (
       <div className="novelContainer">
-        <div className="aa">
+        <div>
           <div className="categoryName">
             <span>소설</span>
             <MdDoubleArrow className="arrow" />
           </div>
-          <div className="kk">
-            {this.state.categoryList.map(novelItem => {
+          <div>
+            {this.state.categoryList.slice(0, -6).map(novelItem => {
               return (
                 <SubCategoryList
                   key={novelItem.id}
@@ -41,19 +40,21 @@ export class Category extends Component {
           </div>
         </div>
 
-        <div className="bb">
+        <div>
           <div className="categoryName">
             <span>컴퓨터/IT</span>
             <MdDoubleArrow className="arrow" />
           </div>
-          {this.state.categoryList.map(novelItem => {
-            return (
-              <SubCategoryList
-                key={novelItem.id}
-                categoryList={novelItem.novelList}
-              />
-            );
-          })}
+          <div className="computerMap">
+            {this.state.categoryList.slice(9).map(novelItem => {
+              return (
+                <SubCategoryList
+                  key={novelItem.key}
+                  categoryList={novelItem.computerList}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     );
