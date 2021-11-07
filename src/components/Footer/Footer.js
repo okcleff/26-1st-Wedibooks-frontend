@@ -1,7 +1,7 @@
+/*eslint-disable */
 import React, { Component } from 'react';
 import './Footer.scss';
 import '../../styles/variables.scss';
-import FooterList from './FooterList';
 
 export class Footer extends Component {
   constructor() {
@@ -33,10 +33,11 @@ export class Footer extends Component {
             <div className="footerList">
               {this.state.footerList.map(footerList => {
                 return (
-                  <FooterList
-                    key={footerList.id}
-                    footerName={footerList.footerData}
-                  />
+                  // <FooterList
+                  //   key={footerList.id}
+                  //   footerName={footerList.footerData}
+                  // />
+                  <div key={footerList.id}>{footerList.footerData}</div>
                 );
               })}
             </div>

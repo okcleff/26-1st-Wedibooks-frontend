@@ -1,20 +1,14 @@
 /* eslint-disable */
 import React, { Component } from 'react';
+import { RiHome2Fill, RiShoppingCartFill } from 'react-icons/ri';
+import { HiViewList } from 'react-icons/hi';
 import './Nav.scss';
 import '../../styles/variables.scss';
-import { RiHome2Fill } from 'react-icons/ri';
-import { RiShoppingCartFill } from 'react-icons/ri';
-import { HiViewList } from 'react-icons/hi';
 
 export class Nav extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
-
   render() {
     return (
-      <header className="Nav">
+      <header className="nav">
         <nav className="navTotal">
           <div className="search">
             <span id="logoName">WEDIBOOKS</span>
@@ -44,11 +38,11 @@ export class Nav extends Component {
           </div>
         </nav>
 
-        <nav className="navCategory">
+        <section className="navCategory">
           <HiViewList className="listIcon" />
           <span className="novel">소설</span>
           <span className="computer">컴퓨터/IT</span>
-        </nav>
+        </section>
       </header>
     );
   }

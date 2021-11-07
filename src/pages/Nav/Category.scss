@@ -1,0 +1,41 @@
+.novelContainer {
+  display: flex;
+  justify-content: space-evenly;
+  .categoryName {
+    width: 170px;
+    background-color: #fad22b;
+
+    span {
+      display: inline-block;
+      padding-top: 13px;
+      padding-left: 13px;
+      padding-right: 75px;
+      padding-bottom: 13px;
+    }
+
+    .arrow {
+      padding-top: 3px;
+      transform: rotate(90deg);
+    }
+  }
+
+  .novelWrap {
+    width: 170px;
+    background-color: #fffbea;
+    // display: inline-block;
+
+    a {
+      &:link {
+        text-decoration: none;
+      }
+      &:hover {
+        color: #fad22b;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .listName {
+    padding: 15px;
+  }
+}
