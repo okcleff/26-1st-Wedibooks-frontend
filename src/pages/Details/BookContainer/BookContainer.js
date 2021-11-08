@@ -24,6 +24,7 @@ class BookContainer extends Component {
       <div className="BookContainer">
         <div className="imageBox">
           <img className="book1" alt="book1" src={thumbnail_image_url} />
+
           <BookBorrow title="미리보기" />
         </div>
 

@@ -1,36 +1,35 @@
-.reviewsList {
+.reviewListBox {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 15px;
 
-  .listTitle {
-    margin-left: 165px;
+  .reviewListStarBox {
     margin-bottom: 10px;
     margin-top: 5px;
-    font-size: 17px;
-    font-weight: 700;
-    width: 800px;
   }
+
   .userLine {
     margin-left: 75px;
+    margin-top: 10px;
     width: 715px;
     border-bottom: 1px solid gray;
   }
 
-  .reviewListBox {
+  .listParent {
     display: flex;
-    width: 715px;
-    margin-left: 75px;
+    flex-direction: column;
+    flex-wrap: pre-line;
+    text-align: center;
+    margin-top: 10px;
+    width: 800px;
 
-    .reviewListStarBox {
-      margin-left: 20px;
-      text-align: center;
+    .score {
+      margin-left: 75px;
     }
 
     .lastReviewContainer {
-      margin-top: 30px;
-      margin-left: 70px;
+      margin-left: 75px;
     }
   }
 }

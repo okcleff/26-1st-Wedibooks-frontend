@@ -1,18 +1,16 @@
-.reviewsList {
+.userReviewsList {
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  .reviewName {
-    margin-left: 165px;
+  .userReviewName {
+    margin-left: 75px;
     margin-bottom: 10px;
     font-size: 17px;
     font-weight: 700;
-    height: 20px;
-    width: 800px;
   }
 
-  .userLine {
+  .reviewLine {
     margin-left: 75px;
     width: 715px;
     border-bottom: 1px solid gray;

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import BookIntroduction from './BookIntroduction/BookIntroduction';
-import BookBorrow from './BookBorrow/BookBorrow';
-import StarRating from './StarRating/StarRating';
 import UserReviews from './UserReviews/UserReviews';
 import ReviewsList from './ReviewsList/ReviewsList';
 import BookContainer from './BookContainer/BookContainer';
@@ -30,8 +28,7 @@ class Details extends Component {
 
   render() {
     const { bookDetail } = this.state;
-    const { description, index } = bookDetail;
-    console.log(bookDetail.product_info && bookDetail.product_info.author);
+
     return (
       <article className="totalBox">
         {bookDetail.product_info && (
@@ -51,16 +48,13 @@ class Details extends Component {
             contents={bookDetail.product_info.index}
           />
         )}
+        {bookDetail.product_info && (
+          <UserReviews bookDetail={bookDetail.product_info} />
+        )}
 
-        {bookDetail.review_info &&
-          bookDetail.review_info.map(el => {
-            return <UserReviews key={el.id} bookDetail={el} />;
-          })}
-
-        {bookDetail.review_info &&
-          bookDetail.review_info.map(el => {
-            return <ReviewsList key={el.id} bookDetail={el} />;
-          })}
+        {bookDetail.review_info && (
+          <ReviewsList bookDetail={bookDetail.review_info} />
+        )}
       </article>
     );
   }

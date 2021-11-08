@@ -6,9 +6,9 @@ import './UserReviews.scss';
 class UserReviews extends Component {
   render() {
     return (
-      <div className="reviewsList">
-        <div className="reviewName">리뷰</div>
-        <div className="userLine" />
+      <div className="userReviewsList">
+        <div className="userReviewName">리뷰</div>
+        <div className="reviewLine" />
         <div className="starBox">
           이 책을 평가해주세요!
           <div className="startRating">

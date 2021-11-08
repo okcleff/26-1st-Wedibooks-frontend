@@ -4,22 +4,23 @@ import './ReviewsList.scss';
 
 class ReviewsList extends Component {
   render() {
+    const { bookDetail } = this.props;
     return (
-      <div className="reviewsList">
-        <div className="listTitle">구매자</div>
+      <div className="reviewListBox">
+        <div className="reviewListStarBox" />
+        구매자 리뷰
         <div className="userLine" />
-        <div className="reviewListBox">
-          <div className="reviewListStarBox">
-            <StarRating />
-            <div className="userID">{this.props.bookDetail.username} </div>
-            <div className="createDate">
-              {this.props.bookDetail.created_at}{' '}
-            </div>
-          </div>
-          <div className="lastReviewContainer">
-            {this.props.bookDetail.contents}
-          </div>
-        </div>
+        {bookDetail.map(el => (
+          <ul className="listParent" key={el.id}>
+            <li className="score">
+              <StarRating />
+              {el.rating}
+            </li>
+            <li className="userID">{el.username}</li>
+            <li className="createDate">{el.created_at}</li>
+            <li className="lastReviewContainer">{el.contents}</li>
+          </ul>
+        ))}
       </div>
     );
   }
