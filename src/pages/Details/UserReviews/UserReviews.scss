@@ -2,12 +2,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 
   .userReviewName {
-    margin-left: 75px;
+    margin-left: 165px;
     margin-bottom: 10px;
     font-size: 17px;
     font-weight: 700;
+    width: 800px;
   }
 
   .reviewLine {
