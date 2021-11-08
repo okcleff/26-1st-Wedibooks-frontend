@@ -26,6 +26,7 @@
       @include flexJustEvenly;
 
       #logoName {
+        display: inline-block;
         margin-top: 25px;
         margin-left: 200px;
         font-family: 'Cafe24Ohsquare';
@@ -57,6 +58,9 @@
         border-radius: 5px;
         background-color: #ffd640;
         color: #f50a0a;
+      }
+      .cashIcon {
+        font-size: 0.9rem;
       }
 
       .myBooksButton {
@@ -94,6 +98,7 @@
     .novel,
     .listIcon,
     .computer {
+      display: inline-block;
       margin-top: 19px;
       font-family: 'KoPubDotumMedium';
       color: #525453;
@@ -105,6 +110,14 @@
 
     .computer {
       margin-right: 200px;
+    }
+  }
+  a {
+    &:link {
+      text-decoration: none;
+    }
+    &:hover {
+      font-weight: bold;
     }
   }
 }

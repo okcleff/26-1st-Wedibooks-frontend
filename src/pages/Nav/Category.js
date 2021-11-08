@@ -1,8 +1,8 @@
 /*eslint-disable */
 import React, { Component } from 'react';
-import './Category.scss';
-import { MdDoubleArrow } from 'react-icons/md';
 import SubCategoryList from './SubCategoryList/SubCategoryList';
+import { MdDoubleArrow } from 'react-icons/md';
+import './Category.scss';
 
 export class Category extends Component {
   constructor() {
@@ -21,6 +21,7 @@ export class Category extends Component {
       });
   }
   render() {
+    const { categoryList } = this.state;
     return (
       <div className="novelContainer">
         <div>
@@ -29,7 +30,7 @@ export class Category extends Component {
             <MdDoubleArrow className="arrow" />
           </div>
           <div>
-            {this.state.categoryList.slice(0, -6).map(novelItem => {
+            {categoryList.slice(0, 9).map(novelItem => {
               return (
                 <SubCategoryList
                   key={novelItem.id}
@@ -46,11 +47,45 @@ export class Category extends Component {
             <MdDoubleArrow className="arrow" />
           </div>
           <div className="computerMap">
-            {this.state.categoryList.slice(9).map(novelItem => {
+            {categoryList.slice(9, 15).map(novelItem => {
               return (
                 <SubCategoryList
-                  key={novelItem.key}
-                  categoryList={novelItem.computerList}
+                  key={novelItem.id}
+                  categoryList={novelItem.novelList}
+                />
+              );
+            })}
+          </div>
+        </div>
+
+        <div>
+          <div className="categoryName">
+            <span>판타지</span>
+            <MdDoubleArrow className="arrow" />
+          </div>
+          <div className="computerMap">
+            {categoryList.slice(15, 21).map(novelItem => {
+              return (
+                <SubCategoryList
+                  key={novelItem.id}
+                  categoryList={novelItem.novelList}
+                />
+              );
+            })}
+          </div>
+        </div>
+
+        <div>
+          <div className="categoryName">
+            <span>만화</span>
+            <MdDoubleArrow className="arrow" />
+          </div>
+          <div className="computerMap">
+            {categoryList.slice(-10).map(novelItem => {
+              return (
+                <SubCategoryList
+                  key={novelItem.id}
+                  categoryList={novelItem.novelList}
                 />
               );
             })}

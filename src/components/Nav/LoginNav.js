@@ -2,11 +2,13 @@
 import React, { Component } from 'react';
 import { RiHome2Fill, RiShoppingCartFill } from 'react-icons/ri';
 import { HiViewList } from 'react-icons/hi';
+import { SiZcash } from 'react-icons/si';
+
 import { Link } from 'react-router-dom';
 import './Nav.scss';
 import '../../styles/variables.scss';
 
-export class Nav extends Component {
+export class LoginNav extends Component {
   render() {
     return (
       <header className="nav">
@@ -22,10 +24,11 @@ export class Nav extends Component {
             />
             <div>
               <button className="cashButton" type="button">
-                회원가입
+                캐시충전&nbsp;
+                <SiZcash className="cashIcon" />
               </button>
               <button className="myBooksButton" type="button">
-                로그인
+                내 서재
               </button>
             </div>
           </div>
@@ -61,4 +64,4 @@ export class Nav extends Component {
   }
 }
 
-export default Nav;
+export default LoginNav;

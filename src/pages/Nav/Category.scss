@@ -1,16 +1,17 @@
 .novelContainer {
   display: flex;
-  justify-content: space-e;
+  justify-content: space-evenly;
+  margin: auto;
+  width: 1100px;
+  top: 166px;
+
   .categoryName {
     width: 170px;
-    background-color: #fad22b;
-
+    background-color: #fc912d;
+    margin-top: 250px;
     span {
       display: inline-block;
-      padding-top: 13px;
-      padding-left: 13px;
-      padding-right: 75px;
-      padding-bottom: 13px;
+      padding: 13px 75px 13px 13px;
     }
 
     .arrow {
@@ -22,14 +23,14 @@
   .novelWrap {
     width: 170px;
     background-color: #fffbea;
-    // display: inline-block;
 
     a {
       &:link {
         text-decoration: none;
       }
+
       &:hover {
-        color: #fad22b;
+        color: #fc912d;
         font-weight: bold;
       }
     }
@@ -37,7 +38,5 @@
 
   .listName {
     padding: 15px;
-  }
-  .computerMap {
   }
 }
