@@ -37,7 +37,7 @@ class Cart extends Component {
             <hr />
             <CartBoxSecondLine />
             <hr />
-            {cartList.slice(2, 4).map(el => {
+            {cartList.map(el => {
               return <CartBoxThirdLine key={el.id} cartList={el} />;
             })}
             <div className="cartBoxFifthLine" />
