@@ -13,7 +13,7 @@ class Details extends Component {
     super();
     this.state = {
       bookDetail: [],
-      url: './data/DetailData.json',
+      url: './data/DetailDataV2.json',
     };
   }
 
@@ -23,7 +23,7 @@ class Details extends Component {
       .then(res => res.json())
       .then(output => {
         this.setState({
-          bookDetail: output,
+          bookDetail: output.message[0],
         });
       });
   }
@@ -31,41 +31,36 @@ class Details extends Component {
   render() {
     const { bookDetail } = this.state;
     const { description, index } = bookDetail;
-
+    console.log(bookDetail.product_info && bookDetail.product_info.author);
     return (
       <article className="totalBox">
-        {bookDetail.map(el => {
-          return <BookContainer key={el.id} bookDetail={el} />;
-        })}
-        {bookDetail.map(el => {
-          return (
-            <BookIntroduction
-              key={el.id}
-              bookDetail={el}
-              title="작품소개"
-              contents={el.description}
-            />
-          );
-        })}
+        {bookDetail.product_info && (
+          <BookContainer bookDetail={bookDetail.product_info} />
+        )}
+        {bookDetail.product_info && (
+          <BookIntroduction
+            bookDetail={bookDetail.product_info}
+            title="작품소개"
+            contents={bookDetail.product_info.description}
+          />
+        )}
+        {bookDetail.product_info && (
+          <BookIntroduction
+            bookDetail={bookDetail.product_info}
+            title="목차"
+            contents={bookDetail.product_info.index}
+          />
+        )}
 
-        {bookDetail.map(el => {
-          return (
-            <BookIntroduction
-              key={el.id}
-              bookDetail={el}
-              title="목차"
-              contents={el.index}
-            />
-          );
-        })}
+        {bookDetail.review_info &&
+          bookDetail.review_info.map(el => {
+            return <UserReviews key={el.id} bookDetail={el} />;
+          })}
 
-        {bookDetail.map(el => {
-          return <UserReviews key={el.id} bookDetail={el} />;
-        })}
-
-        {bookDetail.map(el => {
-          return <ReviewsList key={el.id} bookDetail={el} />;
-        })}
+        {bookDetail.review_info &&
+          bookDetail.review_info.map(el => {
+            return <ReviewsList key={el.id} bookDetail={el} />;
+          })}
       </article>
     );
   }

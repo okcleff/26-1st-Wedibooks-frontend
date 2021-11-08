@@ -11,10 +11,14 @@ class ReviewsList extends Component {
         <div className="reviewListBox">
           <div className="reviewListStarBox">
             <StarRating />
-            <div className="userID">아이디 </div>
-            <div className="createDate">게시일 </div>
+            <div className="userID">{this.props.bookDetail.username} </div>
+            <div className="createDate">
+              {this.props.bookDetail.created_at}{' '}
+            </div>
           </div>
-          <div className="lastReviewContainer">아하하하</div>
+          <div className="lastReviewContainer">
+            {this.props.bookDetail.contents}
+          </div>
         </div>
       </div>
     );

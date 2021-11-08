@@ -17,7 +17,7 @@ class BookContainer extends Component {
       publisher,
       price,
     } = bookDetail;
-    const number = Math.round(bookDetail.price);
+    const number = Math.round(price);
     const priceNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
     return (

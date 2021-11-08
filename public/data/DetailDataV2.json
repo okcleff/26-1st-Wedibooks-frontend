@@ -1,0 +1,33 @@
+{
+  "message": [
+    {
+      "product_info": {
+        "id": 1,
+        "author": "김초엽",
+        "category": "소설",
+        "sub_category": "한국소설",
+        "thumbnail_image_url": "https://cdn.pixabay.com/photo/2015/06/22/08/39/child-817371__340.jpg",
+        "name": "지구 끝의 온실",
+        "publisher": "유페이퍼",
+        "description": "김초엽 첫 장편소설, 모두가 간절히 기다려온 이야기",
+        "index": "1부. 50부터 고생하는 인생",
+        "date_published": "2021.11.12",
+        "price": "12000.00"
+      },
+      "review_info": [
+        {
+          "contents": "가슴아픈 과거사와 별개로 작품속 인물들의 정서상태가 치료를 받아야할 정도라 읽는 내내 마음이 지치더군요.",
+          "created_at": "2021-11-06T11:48:39.917Z",
+          "rating": "3.0",
+          "username": "qwer"
+        },
+        {
+          "contents": "가슴아픈 과거사와 별개로 작품속 인물들의 정서상태가 치료를 받아야할 정도라 읽는 내내 마음이 지치더군요.",
+          "created_at": "2021-10-06T11:48:39.917Z",
+          "rating": "2.5",
+          "username": "asdf"
+        }
+      ]
+    }
+  ]
+}
