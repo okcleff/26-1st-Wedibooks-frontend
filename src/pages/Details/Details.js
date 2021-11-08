@@ -11,13 +11,11 @@ class Details extends Component {
     super();
     this.state = {
       bookDetail: [],
-      url: './data/DetailDataV2.json',
     };
   }
 
   componentDidMount() {
-    const { url } = this.state;
-    fetch(url)
+    fetch('./data/DetailDataV2.json')
       .then(res => res.json())
       .then(output => {
         this.setState({

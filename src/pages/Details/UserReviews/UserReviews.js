@@ -23,7 +23,7 @@ class UserReviews extends Component {
         </div>
         <div className="reviewBox">
           <StarRating />
-          <div className="starRate">평점:{bookDetail.average_rate}</div>
+          <div className="starRate">평점:{average_rate}</div>
           <input
             className="reviewInput"
             type="text"

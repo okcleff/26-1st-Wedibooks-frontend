@@ -33,7 +33,7 @@ class BookContainer extends Component {
         <div className="RightBox">
           <ul className="bookExplanation">
             <li className="firstCategory">
-              {category} > {sub_category}
+              {category} : {sub_category}
             </li>
             <li className="bookTitle">{name}</li>
             <li className="starRating">
