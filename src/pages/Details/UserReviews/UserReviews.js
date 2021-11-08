@@ -5,6 +5,8 @@ import './UserReviews.scss';
 
 class UserReviews extends Component {
   render() {
+    const { bookDetail } = this.props;
+    const { average_rate } = bookDetail;
     return (
       <div className="userReviewsList">
         <div className="userReviewName">리뷰</div>
@@ -21,7 +23,7 @@ class UserReviews extends Component {
         </div>
         <div className="reviewBox">
           <StarRating />
-          <div className="starRate"> 점</div>
+          <div className="starRate">평점:{bookDetail.average_rate}</div>
           <input
             className="reviewInput"
             type="text"

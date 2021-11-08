@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import StarRating from '../StarRating/StarRating';
 import BookBorrow from '../BookBorrow/BookBorrow';
 import { BsFillSuitHeartFill } from 'react-icons/bs';
@@ -16,6 +17,7 @@ class BookContainer extends Component {
       sub_category,
       publisher,
       price,
+      average_rate,
     } = bookDetail;
     const number = Math.round(price);
     const priceNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -36,20 +38,22 @@ class BookContainer extends Component {
             <li className="bookTitle">{name}</li>
             <li className="starRating">
               <StarRating />
-              <div className="averageRate"> 점</div>
+              <div className="averageRate">{average_rate}점</div>
             </li>
             <li className="bookAuthor">{author} 저</li>
             <li className="bookCompany">{publisher} 출판</li>
           </ul>
-          <div className="bookPrice">판매가 {priceNumber}원</div>
+          <div className="bookPrice">판매가{priceNumber}원</div>
           <div className="buttonBox">
             <div className="purchaseButtons">
               <button className="manyButtons" type="button">
                 <BsFillSuitHeartFill className="heartIcon" />
               </button>
-              <button className="manyButtons" type="button">
-                <RiShoppingCartFill className="cartIcon" />
-              </button>
+              <Link to="/cart">
+                <button className="manyButtons" type="button">
+                  <RiShoppingCartFill className="cartIcon" />
+                </button>
+              </Link>
             </div>
             <BookBorrow title="대여하기" />
             <BookBorrow title="구매하기" />
