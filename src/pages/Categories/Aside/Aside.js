@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import './Aside.scss';
 
 export class Aside extends Component {
@@ -30,10 +30,14 @@ export class Aside extends Component {
           <ul className="smallCategory">
             {categoryList.slice(0, 9).map(el => {
               return (
-                <li key={el.id} className="eachCategory">
-                  <Link to="/categories" className="categoryLink">
-                    {el.smallCategory}
-                  </Link>
+                <li
+                  key={el.id}
+                  className="eachCategory"
+                  onClick={() =>
+                    this.props.history.push(`/categories/${el.id}`)
+                  }
+                >
+                  {el.smallCategory}
                 </li>
               );
             })}
@@ -44,10 +48,14 @@ export class Aside extends Component {
           <ul className="smallCategory">
             {categoryList.slice(9, categoryList.length).map(el => {
               return (
-                <li key={el.id} className="eachCategory">
-                  <Link to="/categories" className="categoryLink">
-                    {el.smallCategory}
-                  </Link>
+                <li
+                  key={el.id}
+                  className="eachCategory"
+                  onClick={() =>
+                    this.props.history.push(`/categories/${el.id}`)
+                  }
+                >
+                  {el.smallCategory}
                 </li>
               );
             })}
@@ -58,4 +66,4 @@ export class Aside extends Component {
   }
 }
 
-export default Aside;
+export default withRouter(Aside);

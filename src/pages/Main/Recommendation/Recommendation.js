@@ -9,7 +9,7 @@ export class Recommendation extends Component {
     this.state = {
       recommendationList: [],
       startIndex: 0,
-      endIndex: 1,
+      endIndex: 3,
     };
   }
 
@@ -56,7 +56,7 @@ export class Recommendation extends Component {
             <AiOutlineDoubleLeft size="24" />
           </button>
 
-          <div>
+          <div className="lists">
             {recommendationList
               .slice(startIndex, endIndex)
               .map(recommendationList => {
@@ -64,6 +64,8 @@ export class Recommendation extends Component {
                   <RecommendedBook
                     key={recommendationList.id}
                     recommendationList={recommendationList}
+                    startIndex={startIndex}
+                    endIndex={endIndex}
                   />
                 );
               })}

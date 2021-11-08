@@ -1,31 +1,31 @@
 import React, { Component } from 'react';
-import NewBook from './NewBook';
+import BooksInSlide from './BooksInSlide';
 import { AiOutlineDoubleLeft, AiOutlineDoubleRight } from 'react-icons/ai';
-import './NewIssue.scss';
+import './MainSlides.scss';
 
-export class NewIssue extends Component {
+export class MainSlides extends Component {
   constructor() {
     super();
     this.state = {
-      newIssueList: [],
+      bookList: [],
       startIndex: 0,
       endIndex: 5,
     };
   }
 
   componentDidMount() {
-    fetch('./data/NewIssueList.json')
+    const { listUrl } = this.props;
+    fetch(listUrl)
       .then(res => res.json())
       .then(data => {
         this.setState({
-          newIssueList: data,
+          bookList: data,
         });
       });
   }
 
   showAfter = () => {
     const { startIndex, endIndex } = this.state;
-
     this.setState({
       startIndex: startIndex + 5,
       endIndex: endIndex + 5,
@@ -41,12 +41,13 @@ export class NewIssue extends Component {
   };
 
   render() {
-    const { newIssueList, startIndex, endIndex } = this.state;
+    const { slideTitle, misc, isIssue } = this.props;
+    const { startIndex, endIndex, bookList } = this.state;
     const { showBefore, showAfter } = this;
 
     return (
-      <div className="newIssue">
-        <h1 className="newIssueTitle">집 앞 서점에 방금 나온 신간!</h1>
+      <div className="mainSlides">
+        <h1 className="slideTitle">{slideTitle}</h1>
         <button
           type="button"
           onClick={showBefore}
@@ -56,10 +57,15 @@ export class NewIssue extends Component {
           <AiOutlineDoubleLeft size="24" />
         </button>
 
-        <div className="newIssueGrid">
-          {newIssueList.slice(startIndex, endIndex).map(newIssueList => {
+        <div className="slideList">
+          {bookList.slice(startIndex, endIndex).map(bookList => {
             return (
-              <NewBook key={newIssueList.id} newIssueList={newIssueList} />
+              <BooksInSlide
+                key={bookList.id}
+                bookList={bookList}
+                misc={misc}
+                isIssue={isIssue}
+              />
             );
           })}
         </div>
@@ -77,4 +83,4 @@ export class NewIssue extends Component {
   }
 }
 
-export default NewIssue;
+export default MainSlides;

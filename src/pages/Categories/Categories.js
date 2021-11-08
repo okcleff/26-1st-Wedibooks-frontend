@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Aside from './Aside/Aside';
+// import Aside from './Aside/Aside';
 import CategoryBestseller from './CategoryBest/CategoryBestseller';
 import { BsBookHalf } from 'react-icons/bs';
 import './Categories.scss';
@@ -24,19 +24,12 @@ export class Categories extends Component {
       });
   }
 
-  changeUrl() {
-    this.setState({
-      url: './data/BestsellerListKorea.json',
-    });
-  }
-
   render() {
     const { bestsellerList } = this.state;
-    const { changeUrl } = this;
 
     return (
       <div className="categories">
-        <Aside changeUrl={changeUrl} />
+        {/* <Aside /> */}
         <section>
           <h1 className="categoryName">
             <span className="bookIcon">

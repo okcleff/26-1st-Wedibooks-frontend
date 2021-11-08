@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './CategoryBestseller.scss';
 
 export class CategoryBestseller extends Component {
@@ -9,12 +8,10 @@ export class CategoryBestseller extends Component {
 
     return (
       <div className="categoryBestseller">
-        <Link to="/">
-          <div className="numbering">{id}</div>
-          <img src={imgSrc} alt={name} className="bookImg" />
-          <div className="bookName">{name}</div>
-          <div className="authorName">{author}</div>
-        </Link>
+        <div className="numbering">{id}</div>
+        <img src={imgSrc} alt={name} className="bookImg" />
+        <div className="bookName">{name}</div>
+        <div className="authorName">{author}</div>
       </div>
     );
   }

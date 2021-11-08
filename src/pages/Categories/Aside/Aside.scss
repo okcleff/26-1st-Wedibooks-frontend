@@ -23,17 +23,11 @@
 
   .eachCategory {
     margin: 15px 0px;
-  }
-
-  .categoryLink {
-    text-decoration: none;
-  }
-
-  .categoryLink:visited {
     color: #808991;
   }
 
-  .categoryLink:hover {
+  .eachCategory:hover {
     color: $endColor;
+    cursor: pointer;
   }
 }

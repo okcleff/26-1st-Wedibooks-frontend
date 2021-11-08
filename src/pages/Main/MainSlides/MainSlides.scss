@@ -1,17 +1,17 @@
 @import '../../../styles/variables.scss';
 
-.newIssue {
+.mainSlides {
   margin-bottom: 50px;
   padding: 30px 100px;
   background-color: linen;
   position: relative;
 
-  .newIssueTitle {
+  .slideTitle {
     margin-bottom: 20px;
     font-size: 2rem;
   }
 
-  .newIssueGrid {
+  .slideList {
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(5, 1fr);
@@ -79,11 +79,5 @@
 
   a:visited {
     color: black;
-  }
-
-  .showBtnWrapper {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-around;
   }
 }
