@@ -4,7 +4,7 @@
     "className": "inputId",
     "inputType": "text",
     "name": "id",
-    "placeholder": "아이디",
+    "placeholder": "아이디 (4자 이상, 영문)",
     "maxLength": "25"
   },
 
@@ -12,8 +12,8 @@
     "id": 2,
     "className": "inputPw",
     "inputType": "password",
-    "name": "pw",
-    "placeholder": "비밀번호",
+    "name": "password",
+    "placeholder": "비밀번호 (8자 이상, 영문, 숫자, 특수문자)",
     "maxLength": "10"
   },
 
@@ -21,13 +21,15 @@
     "id": 3,
     "className": "inputPwCheck",
     "inputType": "password",
-    "placeholder": "비밀번호확인"
+    "name": "pwCheck",
+    "placeholder": "비밀번호 확인"
   },
 
   {
     "id": 4,
     "className": "inputEmail",
     "inputType": "text",
+    "name": "email",
     "placeholder": "이메일 주소"
   },
 
@@ -35,6 +37,7 @@
     "id": 5,
     "className": "inputName",
     "inputType": "text",
+    "name": "userName",
     "placeholder": "이름"
   }
 ]
