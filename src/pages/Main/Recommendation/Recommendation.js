@@ -9,7 +9,7 @@ export class Recommendation extends Component {
     this.state = {
       recommendationList: [],
       startIndex: 0,
-      endIndex: 3,
+      endIndex: 1,
     };
   }
 

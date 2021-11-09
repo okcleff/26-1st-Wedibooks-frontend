@@ -30,7 +30,7 @@
     @include flexAlignCenter;
     flex-direction: column;
     justify-content: center;
-    margin-right: 20px;
+    margin-right: 50px;
   }
 
   .rcmDescFirst {
@@ -43,16 +43,16 @@
 
   .headDesc {
     color: gray;
-    font-size: 0.7rem;
-  }
-
-  .detailDesc {
     font-size: 1rem;
   }
 
+  .detailDesc {
+    font-size: 2rem;
+  }
+
   .rcmBookImg {
-    width: 150px;
-    height: 200px;
+    width: 300px;
+    height: 400px;
     margin-left: 5px;
     transition: all 0.1s linear;
   }
