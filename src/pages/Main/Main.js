@@ -19,7 +19,6 @@ export class Main extends Component {
           listUrl="./data/BestSellerListAll.json"
           misc="평점 :"
         />
-        {/* <Footer /> */}
       </div>
     );
   }
