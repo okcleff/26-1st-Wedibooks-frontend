@@ -17,6 +17,7 @@ export class SignUp extends Component {
       gender: '',
     };
   }
+
   goToMain = e => {
     const { id, password, userName, email, birth, gender } = this.state;
     fetch('http://10.58.5.138:8000/users/signup', {
@@ -60,8 +61,60 @@ export class SignUp extends Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
+
+    // this.isValidID();
+    this.isValidPW();
+    this.isValidPwSame();
+    this.isValidEmail();
   };
 
+  // isValidID = () => {
+  //   const stateId = this.state.id;
+  //   const idReg = /^[A-Za-z]{1}[A-Za-z0-9]{3,}$/;
+  //   const afterTest = idReg.test(stateId);
+
+  //   if (afterTest === false) {
+  //     console.log('id', afterTest);
+  //   } else {
+  //     console.log('id : true', afterTest);
+  //   }
+  // };
+
+  isValidPW = () => {
+    const statePw = this.state.password;
+    const pwReg = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*-+_=?]).{8,}$/;
+    const afterTest = pwReg.test(statePw);
+
+    if (afterTest === false) {
+      console.log('pw', afterTest);
+    } else {
+      console.log('pw : true', afterTest);
+    }
+  };
+
+  isValidPwSame = () => {
+    const statepwCheck = this.state.pwCheck;
+    const statePw = this.state.password;
+
+    if (statepwCheck === statePw) {
+      console.log('same true');
+    } else {
+      console.log('not same false');
+    }
+  };
+
+  isValidEmail = () => {
+    const stateEmail = this.state.email;
+    const emailReg =
+      /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+    const afterTest = emailReg.test(stateEmail);
+
+    if (afterTest === false) {
+      console.log('email : true', afterTest);
+    } else {
+      console.log('email : false', afterTest);
+    }
+  };
   pushMan = () => {
     this.setState({
       gender: '1',
@@ -73,32 +126,14 @@ export class SignUp extends Component {
       gender: '2',
     });
   };
-  // pwInput = e => {
-  //   this.setState({});
-  // };
-
-  // pwCheckInput = e => {
-  //   this.setState({});
-  // };
-
-  // emailInput = e => {
-  //   this.setState({});
-  // };
-
-  // userNameInput = e => {
-  //   this.setState({});
-  // };
-
-  // birthInput = e => {
-  //   this.setState({});
-  // };
-
-  // genderInput = e => {
-  //   this.setState({});
-  // };
 
   render() {
     const { inputList } = this.state;
+    const idReg = /^[A-Za-z]{1}[A-Za-z0-9]{3,}$/;
+    const isVaildID = idReg.test(this.state.id);
+
+    console.log("Hey! I'm " + isVaildID);
+
     return (
       <div className="totalContainer">
         <UserNav />
@@ -111,6 +146,8 @@ export class SignUp extends Component {
                   name={inputList.name}
                   inputType={inputList.inputType}
                   placeholder={inputList.placeholder}
+                  maxlength={inputList.maxLength}
+                  errormessage={inputList.errormessage}
                   handleInputs={this.handleInputs}
                 />
               );

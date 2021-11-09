@@ -4,8 +4,9 @@
     "className": "inputId",
     "inputType": "text",
     "name": "id",
-    "placeholder": "아이디 (4자 이상, 영문)",
-    "maxLength": "25"
+    "placeholder": "아이디 (5자 이상, 영문)",
+    "maxLength": "10",
+    "errormessage": "영문으로 5자 이상 입력하세요"
   },
 
   {
@@ -13,8 +14,9 @@
     "className": "inputPw",
     "inputType": "password",
     "name": "password",
-    "placeholder": "비밀번호 (8자 이상, 영문, 숫자, 특수문자)",
-    "maxLength": "10"
+    "placeholder": "비밀번호 (9자 이상, 영문, 숫자, 서로다른 특수문자)",
+    "maxLength": "15",
+    "errormessage": "영문, 숫자와 특수문자 2개를 넣어서 9자 이상 넣어주세요"
   },
 
   {
@@ -22,7 +24,8 @@
     "className": "inputPwCheck",
     "inputType": "password",
     "name": "pwCheck",
-    "placeholder": "비밀번호 확인"
+    "placeholder": "비밀번호 확인",
+    "errormessage": "비밀번호가 다릅니다"
   },
 
   {
@@ -30,7 +33,8 @@
     "className": "inputEmail",
     "inputType": "text",
     "name": "email",
-    "placeholder": "이메일 주소"
+    "placeholder": "이메일 주소",
+    "errormessage": "@와 '.' 을 포함해서 작성해주세요"
   },
 
   {
