@@ -1,12 +1,12 @@
 @import '../../styles/variables.scss';
 
 .categories {
-  display: flex;
-  margin-top: 166px;
+  margin-top: 20px;
   padding: 30px 150px;
 
   .bookIcon {
     margin-right: 10px;
+    vertical-align: middle;
   }
 
   .categoryName {
@@ -15,7 +15,7 @@
   }
 
   .bestsellerTitle {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     padding-bottom: 5px;
     border-bottom: 2px solid $endColor;
     font-size: 1.2rem;
@@ -27,19 +27,25 @@
     grid-gap: 40px;
   }
 
-  .bookImg {
-    margin-bottom: 10px;
-    width: 120px;
-    height: 160px;
-  }
-
-  .categoryBestseller {
-    @include flexDirectColumn;
+  .subcategoryBest {
     text-align: center;
   }
 
   .numbering {
     margin-bottom: 5px;
     color: gray;
+  }
+
+  .bookImg {
+    margin-bottom: 10px;
+    width: 120px;
+    height: 160px;
+  }
+
+  .numbering:hover,
+  .bookImg:hover,
+  .bookName:hover,
+  .authorName:hover {
+    cursor: pointer;
   }
 }

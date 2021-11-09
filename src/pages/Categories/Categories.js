@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import Aside from './Aside/Aside';
-import CategoryBestseller from './CategoryBest/CategoryBestseller';
+import SubcategoryBest from './SubcategoryBest/SubcategoryBest';
 import { BsBookHalf } from 'react-icons/bs';
 import './Categories.scss';
 
@@ -8,42 +7,54 @@ export class Categories extends Component {
   constructor() {
     super();
     this.state = {
-      bestsellerList: [],
-      url: './data/BestsellerListAll.json',
+      list: [],
+      id: '',
     };
   }
 
   componentDidMount() {
-    const { url } = this.state;
-    fetch(url)
+    const { id } = this.props.match.params;
+    fetch(`/data/subBestseller${id}.json`)
       .then(res => res.json())
       .then(data => {
         this.setState({
-          bestsellerList: data,
+          list: data,
+          id,
         });
       });
   }
 
+  componentDidUpdate(prevProps) {
+    const { id } = this.props.match.params;
+    fetch(`/data/subBestseller${id}.json`)
+      .then(res => res.json())
+      .then(data => {
+        if (id !== prevProps.match.params.id) {
+          this.setState({
+            list: data,
+            id,
+          });
+        }
+      });
+  }
+
   render() {
-    const { bestsellerList } = this.state;
+    const { list, id } = this.state;
 
     return (
       <div className="categories">
-        {/* <Aside /> */}
-        <section>
-          <h1 className="categoryName">
-            <span className="bookIcon">
-              <BsBookHalf color="#f9b418" />
-            </span>
-            소설
-          </h1>
-          <div className="bestsellerTitle">베스트셀러</div>
-          <div className="bestsellerWrap">
-            {bestsellerList.map(el => {
-              return <CategoryBestseller key={el.id} bestsellerList={el} />;
-            })}
-          </div>
-        </section>
+        <h1 className="categoryName">
+          <span className="bookIcon">
+            <BsBookHalf color="#f9b418" />
+          </span>
+          {id < 9 ? '소설' : '컴퓨터/IT'}
+        </h1>
+        <div className="bestsellerTitle">베스트셀러</div>
+        <div className="bestsellerWrap">
+          {list.map(el => {
+            return <SubcategoryBest key={el.id} list={el} />;
+          })}
+        </div>
       </div>
     );
   }
