@@ -20,13 +20,23 @@ export class InputData extends Component {
       pwReg.test(event.target.value)
         ? this.setState({ isValid: true })
         : this.setState({ isValid: false });
+    } else if (this.props.name === 'pwCheck') {
+      this.props.passwordConfirmed
+        ? this.setState({ isValid: true })
+        : this.setState({ isValid: false });
+    } else if (this.props.name === 'email') {
+      const pwReg =
+        /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+      pwReg.test(event.target.value)
+        ? this.setState({ isValid: true })
+        : this.setState({ isValid: false });
     }
   };
 
   render() {
     const { inputType, placeholder, name, maxlength, errormessage } =
       this.props;
-
+    console.log(this.props.passwordConfirmed);
     return (
       <div>
         <input

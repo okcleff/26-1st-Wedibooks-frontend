@@ -8,8 +8,8 @@ export class Routes extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={SignUp} />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/SignUp" component={SignUp} />
+          <Route exact path="/" component={Login} />
         </Switch>
       </Router>
     );

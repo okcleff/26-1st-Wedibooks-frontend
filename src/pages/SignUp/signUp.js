@@ -45,76 +45,14 @@ export class SignUp extends Component {
       });
   }
 
-  // isId = userId => {
-  //   const idReg = /^[A-Za-z]{1}[A-Za-z0-9]{3,}$/;
-
-  //   return idReg.test(userId);
-  // };
-
-  // isPw = password => {
-  //   const pwReg = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*-+_=?]).{8,}$/;
-
-  //   return pwReg.test(password);
-  // };
-
   handleInputs = e => {
+    const { name, value } = e.target;
+
     this.setState({
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
-
-    // this.isValidID();
-    this.isValidPW();
-    this.isValidPwSame();
-    this.isValidEmail();
   };
 
-  // isValidID = () => {
-  //   const stateId = this.state.id;
-  //   const idReg = /^[A-Za-z]{1}[A-Za-z0-9]{3,}$/;
-  //   const afterTest = idReg.test(stateId);
-
-  //   if (afterTest === false) {
-  //     console.log('id', afterTest);
-  //   } else {
-  //     console.log('id : true', afterTest);
-  //   }
-  // };
-
-  isValidPW = () => {
-    const statePw = this.state.password;
-    const pwReg = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*-+_=?]).{8,}$/;
-    const afterTest = pwReg.test(statePw);
-
-    if (afterTest === false) {
-      console.log('pw', afterTest);
-    } else {
-      console.log('pw : true', afterTest);
-    }
-  };
-
-  isValidPwSame = () => {
-    const statepwCheck = this.state.pwCheck;
-    const statePw = this.state.password;
-
-    if (statepwCheck === statePw) {
-      console.log('same true');
-    } else {
-      console.log('not same false');
-    }
-  };
-
-  isValidEmail = () => {
-    const stateEmail = this.state.email;
-    const emailReg =
-      /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-    const afterTest = emailReg.test(stateEmail);
-
-    if (afterTest === false) {
-      console.log('email : true', afterTest);
-    } else {
-      console.log('email : false', afterTest);
-    }
-  };
   pushMan = () => {
     this.setState({
       gender: '1',
@@ -127,12 +65,13 @@ export class SignUp extends Component {
     });
   };
 
-  render() {
-    const { inputList } = this.state;
-    const idReg = /^[A-Za-z]{1}[A-Za-z0-9]{3,}$/;
-    const isVaildID = idReg.test(this.state.id);
+  passwordCheck = () => {
+    return this.state.password === this.state.pwCheck;
+  };
 
-    console.log("Hey! I'm " + isVaildID);
+  render() {
+    const { inputList, pwCheck, password } = this.state;
+    const passwordConfirmed = pwCheck === password;
 
     return (
       <div className="totalContainer">
@@ -144,6 +83,8 @@ export class SignUp extends Component {
                 <InputData
                   key={inputList.id}
                   name={inputList.name}
+                  passwordConfirmed={passwordConfirmed}
+                  passwordCheck={this.passwordCheck}
                   inputType={inputList.inputType}
                   placeholder={inputList.placeholder}
                   maxlength={inputList.maxLength}

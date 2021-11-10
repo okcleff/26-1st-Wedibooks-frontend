@@ -11,7 +11,7 @@ export class Login extends Component {
     };
   }
 
-  goToMain = e => {
+  goToLogin = e => {
     const { inputId, inputPw } = this.state;
     e.preventDefault();
     fetch('http://10.58.5.138:8000/users/signin', {
@@ -37,9 +37,9 @@ export class Login extends Component {
     return pwReg.test(password);
   };
 
-  // goToMain = () => {
-  //   this.props.history.push('/Main');
-  // };
+  goToSignUp = () => {
+    this.props.history.push('/SignUp');
+  };
 
   handleIdInput = e => {
     const { name, value } = e.target;
@@ -106,12 +106,17 @@ export class Login extends Component {
               !(this.isId(this.state.inputId) && this.isPw(this.state.inputPw))
               //!(isId && isPw)
             }
-            onClick={this.goToMain}
+            onClick={this.goToLogin}
             className="loginButton buttonCommon"
           >
             로그인
           </button>
-          <button className="signUpButton buttonCommon">회원가입</button>
+          <button
+            onClick={this.goToSignUp}
+            className="signUpButton buttonCommon"
+          >
+            회원가입
+          </button>
         </form>
       </>
     );

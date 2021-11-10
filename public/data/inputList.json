@@ -4,9 +4,9 @@
     "className": "inputId",
     "inputType": "text",
     "name": "id",
-    "placeholder": "아이디 (5자 이상, 영문)",
+    "placeholder": "아이디 (4자 이상, 영문)",
     "maxLength": "10",
-    "errormessage": "영문으로 5자 이상 입력하세요"
+    "errormessage": "영문으로 4자 이상 입력하세요"
   },
 
   {
@@ -14,9 +14,9 @@
     "className": "inputPw",
     "inputType": "password",
     "name": "password",
-    "placeholder": "비밀번호 (9자 이상, 영문, 숫자, 서로다른 특수문자)",
+    "placeholder": "비밀번호 (8자 이상, 영문, 숫자, 특수문자)",
     "maxLength": "15",
-    "errormessage": "영문, 숫자와 특수문자 2개를 넣어서 9자 이상 넣어주세요"
+    "errormessage": "영문, 숫자와 특수문자를 넣어서 8자 이상 넣어주세요"
   },
 
   {
