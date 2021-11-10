@@ -11,6 +11,7 @@ class Details extends Component {
     super();
     this.state = {
       bookDetail: [],
+      newComment: '',
     };
   }
 
@@ -24,44 +25,88 @@ class Details extends Component {
       });
   }
 
+  textChange = commentInput => {
+    this.setState({
+      newComment: commentInput.target.value,
+    });
     fetch('./data/DetailDataV2.json', {
       method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
-        key: 'newCommnet',
+        content: 'newComment',
       }),
     })
-      .then(res => res.json())
-      .then(res => {
-        if (res.success) {
-          alert('저장 완료');
+      .then(response => response.json())
+      .then(response => {
+        if (response.token) {
+          localStorage.setItem('wtw-token', response.token);
         }
       });
-  }
+  };
+
+  pressEnter = commentInput => {
+    const { newComment } = this.state;
+    if (commentInput.key === 'Enter' && newComment) {
+      commentInput.target.value = '';
+      this.setState({
+        newComment: '',
+      });
+    }
+  };
+
+  showScore = score => {
+    this.setState({
+      [score]: score,
+    });
+
+    fetch('./data/DetailDataV2.json', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        rating: 'score',
+      }),
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.token) {
+          localStorage.setItem('wtw-token', response.token);
+        }
+      });
+  };
 
   render() {
-    const { bookDetail } = this.state;
+    const { bookDetail, commentInput } = this.state;
 
     return (
       <article className="totalBox">
         {bookDetail.product_info && (
-          <BookContainer bookDetail={bookDetail.product_info} />
-        )}
-        {bookDetail.product_info && (
-          <BookIntroduction
-            bookDetail={bookDetail.product_info}
-            title="작품소개"
-            contents={bookDetail.product_info.description}
-          />
-        )}
-        {bookDetail.product_info && (
-          <BookIntroduction
-            bookDetail={bookDetail.product_info}
-            title="목차"
-            contents={bookDetail.product_info.index}
-          />
-        )}
-        {bookDetail.product_info && (
-          <UserReviews bookDetail={bookDetail.product_info} />
+          <>
+            <BookContainer bookDetail={bookDetail.product_info} />
+
+            <BookIntroduction
+              bookDetail={bookDetail.product_info}
+              title="작품소개"
+              contents={bookDetail.product_info.description}
+            />
+
+            <BookIntroduction
+              bookDetail={bookDetail.product_info}
+              title="목차"
+              contents={bookDetail.product_info.index}
+            />
+
+            <UserReviews
+              bookDetail={bookDetail.product_info}
+              showScore={this.showScore}
+              textChange={this.textChange}
+              commentInput={commentInput}
+              pressEnter={this.pressEnter}
+            />
+          </>
         )}
 
         {bookDetail.review_info && (

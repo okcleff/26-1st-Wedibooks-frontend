@@ -16,39 +16,46 @@ class NewStar extends Component {
   };
 
   render() {
+    const { showScore } = this.props;
+    const { star } = this.state;
     return (
       <>
         <StarIcon
           value="1"
-          currentStar={this.state.star}
           changeStarColor={this.changeStarColor}
+          currentStar={star}
           score={1}
+          showScore={showScore}
         />
 
         <StarIcon
           value="2"
-          currentStar={this.state.star}
           changeStarColor={this.changeStarColor}
+          currentStar={star}
           score={2}
+          showScore={showScore}
         />
 
         <StarIcon
           value="3"
-          currentStar={this.state.star}
           changeStarColor={this.changeStarColor}
+          currentStar={star}
           score={3}
+          showScore={showScore}
         />
         <StarIcon
           value="4"
-          currentStar={this.state.star}
           changeStarColor={this.changeStarColor}
+          currentStar={star}
           score={4}
+          showScore={showScore}
         />
         <StarIcon
           value="5"
-          currentStar={this.state.star}
           changeStarColor={this.changeStarColor}
+          currentStar={star}
           score={5}
+          showScore={showScore}
         />
       </>
     );

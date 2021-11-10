@@ -16,11 +16,7 @@ class ReviewsList extends Component {
                 <StarRating />
                 {el.rating}
               </div>
-              <div className="userID">
-                {el.username}
-                <br />
-                {el.created_at.substr(0, 10)}
-              </div>
+              <div className="userID">{el.username}</div>
               <div className="lastReviewContainer">{el.contents}</div>
             </div>
           ))}

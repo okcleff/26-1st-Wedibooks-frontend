@@ -59,7 +59,7 @@
       }
 
       .bookAuthor {
-        margin-top: 25px;
+        margin-top: 20px;
         font-size: 22px;
         font-weight: 700;
       }
@@ -71,10 +71,14 @@
     }
 
     .bookPrice {
-      padding-top: 24px;
+      padding-top: 20px;
       width: 400px;
       height: 70px;
       font-weight: 700;
+    }
+
+    .likeNumering {
+      font-size: 16px;
     }
 
     .buttonBox {
