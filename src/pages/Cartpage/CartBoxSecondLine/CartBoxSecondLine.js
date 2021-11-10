@@ -3,7 +3,6 @@ import DeleteButton from '../DeleteButton/DeleteButton';
 import './CartBoxSecondLine.scss';
 
 class CartBoxSecondLine extends Component {
-  checkAll = e => {};
   render() {
     return (
       <div className="cartBoxSecondLine">
