@@ -122,33 +122,35 @@
     }
   }
   .navDropList {
-    .novelDropList {
-      margin: 0 auto;
-    }
-    .itDropList {
-      margin-left: 800px;
-    }
-    .allDropList {
-      margin-right: 800px;
-    }
+    display: flex;
+    position: relative;
+    height: 320px;
   }
 }
-.novelHidden,
-.computerHidden,
-.allListHidden {
+.listHidden {
   display: none;
 }
-.novelOpen,
-.computerOpen,
-.allListOpen {
+.listOpen {
   display: block;
 }
 
 .novelDropList {
-  width: 170px;
-  background-color: #fffbea;
+  position: absolute;
+  left: 45.5%;
+}
+.itDropList {
+  position: absolute;
+  right: 28.5%;
+}
+.subUl {
+  text-align: center;
+}
+.subLi {
+  margin: 20px 0;
+  color: gray;
+}
 
-  .DropListName {
-    padding: 15px;
-  }
+.subLi:hover {
+  color: $endColor;
+  cursor: pointer;
 }

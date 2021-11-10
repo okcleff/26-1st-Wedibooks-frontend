@@ -11,9 +11,8 @@ export class Nav extends Component {
   constructor() {
     super();
     this.state = {
-      novelSmallCategory: 'novelHidden',
-      computerSmallCategory: 'computerHidden',
-      allListSmallCategory: 'allListHidden',
+      sub: 'listHidden',
+
       dropList: [],
     };
   }
@@ -28,47 +27,15 @@ export class Nav extends Component {
       });
   }
 
-  novelDropDown = () => {
-    if (this.state.novelSmallCategory === 'novelHidden') {
-      this.setState({
-        novelSmallCategory: 'novelOpen',
-      });
-    } else {
-      this.setState({
-        novelSmallCategory: 'novelHidden',
-      });
-    }
+  dropDown = () => {
+    const { sub } = this.state;
+    this.setState({
+      sub: sub === 'listHidden' ? 'listOpen' : 'listHidden',
+    });
   };
 
-  computerDropDown = () => {
-    if (this.state.computerSmallCategory === 'computerHidden') {
-      this.setState({
-        computerSmallCategory: 'computerOpen',
-      });
-    } else {
-      this.setState({
-        computerSmallCategory: 'computerHidden',
-      });
-    }
-  };
-  allListDropDown = () => {
-    if (this.state.allListSmallCategory === 'allListHidden') {
-      this.setState({
-        allListSmallCategory: 'allListOpen',
-      });
-    } else {
-      this.setState({
-        allListSmallCategory: 'allListHidden',
-      });
-    }
-  };
   render() {
-    const {
-      novelSmallCategory,
-      computerSmallCategory,
-      allListSmallCategory,
-      dropList,
-    } = this.state;
+    const { sub, dropList } = this.state;
     return (
       <header className="nav">
         <nav className="navTotal">
@@ -107,45 +74,42 @@ export class Nav extends Component {
         </nav>
 
         <section className="navCategory">
-          <HiViewList className="listIcon" onClick={this.allListDropDown} />
+          <HiViewList className="listIcon" onClick={this.dropDown} />
 
-          <span className="novel" onClick={this.novelDropDown}>
+          <span className="novel" onClick={this.dropDown}>
             소설
           </span>
 
-          <span className="computer" onClick={this.computerDropDown}>
+          <span className="computer" onClick={this.dropDown}>
             컴퓨터/IT
           </span>
         </section>
 
         <div className="navDropList">
           <div className="novelDropList">
-            <section className={novelSmallCategory}>
-              {dropList.slice(0, 9).map(novel => {
-                return (
-                  <NavList key={novel.id} dropDownList={novel.novelList} />
-                );
-              })}
+            <section className={sub}>
+              <ul className="subUl">
+                {dropList.slice(1, 9).map(el => {
+                  return (
+                    <li className="subLi" key={el.id}>
+                      {el.novelList}
+                    </li>
+                  );
+                })}
+              </ul>
             </section>
           </div>
-
           <div className="itDropList">
-            <section className={computerSmallCategory}>
-              {dropList.slice(9, 15).map(novel => {
-                return (
-                  <NavList key={novel.id} dropDownList={novel.novelList} />
-                );
-              })}
-            </section>
-          </div>
-
-          <div className="allDropList">
-            <section className={allListSmallCategory}>
-              {dropList.slice(0, 15).map(novel => {
-                return (
-                  <NavList key={novel.id} dropDownList={novel.novelList} />
-                );
-              })}
+            <section className={sub}>
+              <ul className="subUl">
+                {dropList.slice(10, 15).map(el => {
+                  return (
+                    <li className="subLi" key={el.id}>
+                      {el.novelList}
+                    </li>
+                  );
+                })}
+              </ul>
             </section>
           </div>
         </div>

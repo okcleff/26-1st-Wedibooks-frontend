@@ -4,17 +4,19 @@ import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
 import Category from './pages/Nav/Category';
 import LoginNav from './components/Nav/LoginNav';
+import Cart from './pages/Cartpage/Cart';
 export class Routes extends Component {
   render() {
     return (
       <Router>
-        {/* <Nav /> */}
         <Switch>
           <Route exact path="/" component={Nav} />
           <Route exact path="/LoginNav" component={LoginNav} />
           <Route exact path="/Footer" component={Footer} />
           <Route exact path="/Category" component={Category} />
+          <Route exact path="/Cartpage" component={Cart} />
         </Switch>
+        <Footer />
       </Router>
     );
   }

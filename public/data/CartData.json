@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "imgSrc": "https://cdn.pixabay.com/photo/2020/05/15/13/28/reading-5173530__480.jpg",
+    "name": "책 제목 1",
+    "headDesc": "영화계가 먼저 '픽'한 강렬한 미스터리 스릴러!",
+    "detailDesc1": "서늘한 긴장감과 숨 막히는 반전",
+    "detailDesc2": "역대급 K-미스터리의 탄생",
+    "author": "작가 미상",
+    "issueDate": "2021.11.12",
+    "price": "10,000원",
+    "reviewDate": "2021.12.01"
+  },
+  {
+    "id": 2,
+    "imgSrc": "https://cdn.pixabay.com/photo/2014/02/17/13/52/heart-268151__340.jpg",
+    "name": "책 제목 2",
+    "headDesc": "침묵을 택한 목격자, 범죄의 타깃이 되다",
+    "detailDesc1": "조심해,",
+    "detailDesc2": "내가 지켜보고 있으니까...",
+    "desc": "Hi there.",
+    "author": "작가 미상",
+    "issueDate": "2020.11.12",
+    "price": "12,000원",
+    "reviewDate": "2020.12.01"
+  },
+  {
+    "id": 3,
+    "imgSrc": "https://cdn.pixabay.com/photo/2014/02/17/13/52/heart-268151__340.jpg",
+    "name": "책 제목 3",
+    "headDesc": "침묵을 택한 목격자, 범죄의 타깃이 되다",
+    "detailDesc1": "조심해,",
+    "detailDesc2": "내가 지켜보고 있으니까...",
+    "desc": "Hi there.",
+    "author": "작가 미상",
+    "issueDate": "2020.11.12",
+    "price": "12,000원",
+    "reviewDate": "2020.12.01"
+  },
+  {
+    "id": 4,
+    "imgSrc": "https://cdn.pixabay.com/photo/2014/02/17/13/52/heart-268151__340.jpg",
+    "name": "책 제목 4",
+    "headDesc": "침묵을 택한 목격자, 범죄의 타깃이 되다",
+    "detailDesc1": "조심해,",
+    "detailDesc2": "내가 지켜보고 있으니까...",
+    "desc": "Hi there.",
+    "author": "작가 미상",
+    "issueDate": "2020.11.12",
+    "price": "12,000원",
+    "reviewDate": "2020.12.01"
+  }
+]

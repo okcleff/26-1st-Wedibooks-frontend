@@ -1,0 +1,48 @@
+.cartBoxThirdLine {
+  display: flex;
+  justify-content: space-between;
+  height: 160px;
+
+  input[type='checkbox'] {
+    width: 70px;
+    margin-top: 70px;
+    transform: scale(1.4);
+  }
+
+  .cartBookImage .checkBook {
+    margin-top: 10px;
+    margin-left: -145px;
+    width: 90px;
+    height: 130px;
+    border-radius: 2px;
+    box-shadow: 5px 5px 5px gray;
+  }
+
+  .bookBoxContents {
+    .bookTitle {
+      flex-direction: column;
+      margin-top: 10px;
+      margin-left: -170px;
+      list-style: none;
+      line-height: 200%;
+      font-size: 18px;
+
+      .title {
+        font-size: 22px;
+        font-weight: 700;
+      }
+    }
+
+    .itemDelete {
+      width: 70px;
+      height: 30px;
+    }
+  }
+
+  .bookPrice {
+    margin-top: 10px;
+    margin-right: 22px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
