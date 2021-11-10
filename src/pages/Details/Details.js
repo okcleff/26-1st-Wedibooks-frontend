@@ -24,6 +24,20 @@ class Details extends Component {
       });
   }
 
+    fetch('./data/DetailDataV2.json', {
+      method: 'post',
+      body: JSON.stringify({
+        key: 'newCommnet',
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        if (res.success) {
+          alert('저장 완료');
+        }
+      });
+  }
+
   render() {
     const { bookDetail } = this.state;
 
