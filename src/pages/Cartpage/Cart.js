@@ -12,6 +12,7 @@ class Cart extends Component {
     this.state = {
       cartList: [],
       bookPrice: 0,
+      allChecked: false,
     };
   }
 
@@ -30,6 +31,16 @@ class Cart extends Component {
       bookPrice: isCheck ? bookPrice + price : bookPrice - price,
     });
   };
+
+  handleAllChecked = check => {
+    //전체선택 체크박스값을 개별에도 다 넣어주기
+    const { allChecked } = this.state;
+    this.setState = {
+      allChecked: !allChecked,
+      check: !allChecked,
+    };
+  };
+
   render() {
     const { cartList, bookPrice } = this.state;
 

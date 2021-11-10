@@ -16,7 +16,7 @@ export class Routes extends Component {
           <Route exact path="/Category" component={Category} />
           <Route exact path="/Cartpage" component={Cart} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     );
   }
