@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
 import Categories from './pages/Categories/Categories';
+import Details from './pages/Details/Details';
 
 export class Routes extends Component {
   render() {
@@ -14,6 +15,7 @@ export class Routes extends Component {
             path="/categories/subcategories/:id"
             component={Categories}
           />
+          <Route exact path="/details/:id" component={Details} />
         </Switch>
       </Router>
     );

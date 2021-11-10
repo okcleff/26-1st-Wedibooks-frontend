@@ -9,7 +9,7 @@ export class SubcategoryBest extends Component {
       <div
         className="subcategoryBest"
         onClick={() => {
-          this.props.history.push('/');
+          this.props.history.push(`/details/${id}`);
         }}
       >
         <div className="numbering">{id}</div>
