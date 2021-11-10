@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
 import './Nav.scss';
 
 export class Nav extends Component {
@@ -43,4 +42,4 @@ export class Nav extends Component {
   }
 }
 
-export default withRouter(Nav);
+export default Nav;
