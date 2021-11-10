@@ -8,23 +8,24 @@ export class InputData extends Component {
     };
   }
   handleInputs = event => {
-    this.props.handleInputs(event);
+    const { handleInputs, name, passwordConfirmed } = this.props;
+    handleInputs(event);
 
-    if (this.props.name === 'id') {
+    if (name === 'id') {
       const idReg = /^[A-Za-z]{1}[A-Za-z0-9]{3,}$/;
       idReg.test(event.target.value)
         ? this.setState({ isValid: true })
         : this.setState({ isValid: false });
-    } else if (this.props.name === 'password') {
+    } else if (name === 'password') {
       const pwReg = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*-+_=?]).{8,}$/;
       pwReg.test(event.target.value)
         ? this.setState({ isValid: true })
         : this.setState({ isValid: false });
-    } else if (this.props.name === 'pwCheck') {
-      this.props.passwordConfirmed
+    } else if (name === 'pwCheck') {
+      passwordConfirmed
         ? this.setState({ isValid: true })
         : this.setState({ isValid: false });
-    } else if (this.props.name === 'email') {
+    } else if (name === 'email') {
       const pwReg =
         /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
       pwReg.test(event.target.value)
@@ -36,7 +37,6 @@ export class InputData extends Component {
   render() {
     const { inputType, placeholder, name, maxlength, errormessage } =
       this.props;
-    console.log(this.props.passwordConfirmed);
     return (
       <div>
         <input

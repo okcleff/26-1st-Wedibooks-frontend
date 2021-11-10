@@ -11,7 +11,7 @@ export class Login extends Component {
     };
   }
 
-  goToLogin = e => {
+  submitUserInfo = e => {
     const { inputId, inputPw } = this.state;
     e.preventDefault();
     fetch('http://10.58.5.138:8000/users/signin', {
@@ -22,7 +22,17 @@ export class Login extends Component {
       }),
     })
       .then(response => response.json())
-      .then(result => console.log('acess_token : ', result));
+      .then(result => {
+        if (result.message === 'INVALID_USER') {
+          alert('유효하지않은 사용자입니다.');
+        } else if (result.message === 'Does_Not_Exist') {
+          alert('가입하지 않은 사용자입니다.');
+        } else if (result.access_token) {
+          alert('로그인 성공');
+          localStorage.setItem('token', result.access_token);
+          this.props.history.push('/Main');
+        }
+      });
   };
 
   isId = userId => {
@@ -43,7 +53,6 @@ export class Login extends Component {
 
   handleIdInput = e => {
     const { name, value } = e.target;
-    //if (this.isId(e.target.value)) {
     this.setState({
       [name]: value,
     });
@@ -51,7 +60,6 @@ export class Login extends Component {
   };
 
   handlePwInput = e => {
-    //if (this.isPw(e.target.value)) {
     this.setState({
       inputPw: e.target.value,
     });
@@ -59,13 +67,9 @@ export class Login extends Component {
   };
 
   render() {
-    // let isId = this.state.inputId.length >= 6;
-    // let isPw = this.state.inputPw.length >= 6;
-    // console.log(this.isId(this.state.inputId));
-    // console.log(this.isPw(this.state.inputPw));
-    // console.log(this.isId(this.state.inputId) && this.isPw(this.state.inputPw));
+    const { inputId, inputPw } = this.state;
     return (
-      <>
+      <div className="totalContainer">
         <UserNav />
         <form className="loginSection">
           <div className="inputIdPw">
@@ -76,7 +80,7 @@ export class Login extends Component {
               name="inputId"
               placeholder="아이디"
               maxLength="10"
-              value={this.state.inputId}
+              value={inputId}
             />
             <input
               onChange={this.handlePwInput}
@@ -85,28 +89,14 @@ export class Login extends Component {
               name="inputPw"
               placeholder="비밀번호"
               maxLength="10"
-              value={this.state.inputPw}
+              value={inputPw}
             />
-            <div className="checkBoxContainer">
-              {/* <span>
-                <label>
-                  <input className="checkBox" type="checkbox" />
-                  <span className="maintainLogin"> 로그인 상태 유지</span>
-                </label>
-                <button className="classNameButton lookingIdButton">
-                  아이디 찾기
-                </button>
-                |<button className="classNameButton">비밀번호 재설정</button>
-              </span> */}
-            </div>
+            <div className="checkBoxContainer" />
           </div>
 
           <button
-            disabled={
-              !(this.isId(this.state.inputId) && this.isPw(this.state.inputPw))
-              //!(isId && isPw)
-            }
-            onClick={this.goToLogin}
+            disabled={!(this.isId(inputId) && this.isPw(inputPw))}
+            onClick={this.submitUserInfo}
             className="loginButton buttonCommon"
           >
             로그인
@@ -118,7 +108,7 @@ export class Login extends Component {
             회원가입
           </button>
         </form>
-      </>
+      </div>
     );
   }
 }

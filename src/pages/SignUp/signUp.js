@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import UserNav from '../../components/userNav/userNav';
 import InputData from './InputData';
+import INPUT_LIST from './inputList';
 import './SignUp.scss';
 
 export class SignUp extends Component {
   constructor() {
     super();
     this.state = {
-      inputList: [],
       id: '',
       password: '',
       pwCheck: '',
@@ -18,7 +18,7 @@ export class SignUp extends Component {
     };
   }
 
-  goToMain = e => {
+  submitUserInfoToSignUp = e => {
     const { id, password, userName, email, birth, gender } = this.state;
     fetch('http://10.58.5.138:8000/users/signup', {
       method: 'POST',
@@ -32,18 +32,23 @@ export class SignUp extends Component {
       }),
     })
       .then(response => response.json())
-      .then(data => console.log(data));
-  };
-
-  componentDidMount() {
-    fetch('./data/inputList.json')
-      .then(res => res.json())
       .then(data => {
-        this.setState({
-          inputList: data,
-        });
+        if (data.message === 'Id format is not valid') {
+          alert('유효하지않은 아이디입니다.');
+        } else if (data.message === 'Password_Validation_Error') {
+          alert('유효하지 않은 비밀번호입니다.');
+        } else if (data.message === 'Email format is not valid') {
+          alert('유효하지 않은 이메일입니다.');
+        } else if (data.message === 'ID_Exist_Error') {
+          alert('이미 등록된 아이디입니다.');
+        } else if (data.message === 'Email.Exist_Error') {
+          alert('이미 등록된 이메일입니다.');
+        } else if (data.message === 'SUCCESS') {
+          alert('회원가입 성공');
+          this.props.history.push('/Login');
+        }
       });
-  }
+  };
 
   handleInputs = e => {
     const { name, value } = e.target;
@@ -64,13 +69,8 @@ export class SignUp extends Component {
       gender: '2',
     });
   };
-
-  passwordCheck = () => {
-    return this.state.password === this.state.pwCheck;
-  };
-
   render() {
-    const { inputList, pwCheck, password } = this.state;
+    const { pwCheck, password } = this.state;
     const passwordConfirmed = pwCheck === password;
 
     return (
@@ -78,7 +78,7 @@ export class SignUp extends Component {
         <UserNav />
         <div className="signUpBody">
           <section className="signUpSection">
-            {inputList.map(inputList => {
+            {INPUT_LIST.map(inputList => {
               return (
                 <InputData
                   key={inputList.id}
