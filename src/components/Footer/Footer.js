@@ -1,25 +1,9 @@
 /*eslint-disable */
 import React, { Component } from 'react';
+import { FOOTER_DATA } from './FooterData';
 import './Footer.scss';
-import '../../styles/variables.scss';
 
 export class Footer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      footerList: [],
-    };
-  }
-  componentDidMount() {
-    fetch('./data/FooterList.json')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          footerList: data,
-        });
-      });
-  }
-
   render() {
     return (
       <footer>
@@ -31,14 +15,8 @@ export class Footer extends Component {
               <span className="notice">공지사항</span>
             </div>
             <div className="footerList">
-              {this.state.footerList.map(footerList => {
-                return (
-                  // <FooterList
-                  //   key={footerList.id}
-                  //   footerName={footerList.footerData}
-                  // />
-                  <div key={footerList.id}>{footerList.footerData}</div>
-                );
+              {FOOTER_DATA.map(footerList => {
+                return <div key={footerList.id}>{footerList.footerData}</div>;
               })}
             </div>
             <div className="information">

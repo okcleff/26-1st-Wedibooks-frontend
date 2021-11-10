@@ -1,80 +1,35 @@
 /* eslint-disable */
 import React, { Component } from 'react';
-import NavList from './NavList';
 import { RiHome2Fill, RiShoppingCartFill } from 'react-icons/ri';
 import { HiViewList } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
+import { MENU_LISTS } from './MenuLists';
 import './Nav.scss';
-import '../../styles/variables.scss';
 
 export class Nav extends Component {
   constructor() {
     super();
     this.state = {
-      novelSmallCategory: 'novelHidden',
-      computerSmallCategory: 'computerHidden',
-      allListSmallCategory: 'allListHidden',
-      dropList: [],
+      isOpened: false,
     };
   }
 
-  componentDidMount() {
-    fetch('./data/dropDownList.json')
-      .then(res => res.json())
-      .then(list => {
-        this.setState({
-          dropList: list,
-        });
-      });
-  }
-
-  novelDropDown = () => {
-    if (this.state.novelSmallCategory === 'novelHidden') {
-      this.setState({
-        novelSmallCategory: 'novelOpen',
-      });
-    } else {
-      this.setState({
-        novelSmallCategory: 'novelHidden',
-      });
-    }
+  handleMenu = () => {
+    const { isOpened } = this.state;
+    this.setState({
+      isOpened: !isOpened,
+    });
   };
 
-  computerDropDown = () => {
-    if (this.state.computerSmallCategory === 'computerHidden') {
-      this.setState({
-        computerSmallCategory: 'computerOpen',
-      });
-    } else {
-      this.setState({
-        computerSmallCategory: 'computerHidden',
-      });
-    }
-  };
-  allListDropDown = () => {
-    if (this.state.allListSmallCategory === 'allListHidden') {
-      this.setState({
-        allListSmallCategory: 'allListOpen',
-      });
-    } else {
-      this.setState({
-        allListSmallCategory: 'allListHidden',
-      });
-    }
-  };
   render() {
-    const {
-      novelSmallCategory,
-      computerSmallCategory,
-      allListSmallCategory,
-      dropList,
-    } = this.state;
+    const { isOpened } = this.state;
+
     return (
       <header className="nav">
         <nav className="navTotal">
           <div className="search">
-            <Link to="/footer">
-              <span id="logoName">WEDIBOOKS</span>
+            <Link to="/footer" className="logoName">
+              WEDIBOOKS
             </Link>
             <input
               className="searchInput"
@@ -83,6 +38,7 @@ export class Nav extends Component {
             />
             <div>
               <button className="cashButton" type="button">
+                {/* {isOpened ? '회원가입' : '로그아웃'} */}
                 회원가입
               </button>
               <button className="myBooksButton" type="button">
@@ -91,64 +47,52 @@ export class Nav extends Component {
             </div>
           </div>
           <div className="homeCart">
-            <div>
-              <Link to="/footer">
-                <RiHome2Fill className="homeIcon" />
-                <span className="homeText">HOME</span>
-              </Link>
-            </div>
-            <div>
-              <Link to="/footer">
-                <RiShoppingCartFill className="cartIcon" />
-                <span className="cartText">CART</span>
-              </Link>
-            </div>
+            <Link to="/footer">
+              <RiHome2Fill className="homeIcon" />
+              <span className="menuText">HOME</span>
+            </Link>
+
+            <Link to="/footer">
+              <RiShoppingCartFill className="cartIcon" />
+              <span className="menuText">CART</span>
+            </Link>
           </div>
         </nav>
 
         <section className="navCategory">
-          <HiViewList className="listIcon" onClick={this.allListDropDown} />
+          <HiViewList className="listIcon" onClick={this.handleMenu} />
 
-          <span className="novel" onClick={this.novelDropDown}>
+          <span className="novel" onClick={this.handleMenu}>
             소설
           </span>
 
-          <span className="computer" onClick={this.computerDropDown}>
+          <span className="computer" onClick={this.handleMenu}>
             컴퓨터/IT
           </span>
         </section>
 
-        <div className="navDropList">
-          <div className="novelDropList">
-            <section className={novelSmallCategory}>
-              {dropList.slice(0, 9).map(novel => {
+        {isOpened && (
+          <div className="navDropList">
+            <ul className="novelDropList">
+              {MENU_LISTS.slice(1, 9).map(el => {
                 return (
-                  <NavList key={novel.id} dropDownList={novel.novelList} />
+                  <li className="subLi" key={el.id}>
+                    {el.novelList}
+                  </li>
                 );
               })}
-            </section>
-          </div>
-
-          <div className="itDropList">
-            <section className={computerSmallCategory}>
-              {dropList.slice(9, 15).map(novel => {
+            </ul>
+            <ul className="itDropList">
+              {MENU_LISTS.slice(10, 15).map(el => {
                 return (
-                  <NavList key={novel.id} dropDownList={novel.novelList} />
+                  <li className="subLi" key={el.id}>
+                    {el.novelList}
+                  </li>
                 );
               })}
-            </section>
+            </ul>
           </div>
-
-          <div className="allDropList">
-            <section className={allListSmallCategory}>
-              {dropList.slice(0, 15).map(novel => {
-                return (
-                  <NavList key={novel.id} dropDownList={novel.novelList} />
-                );
-              })}
-            </section>
-          </div>
-        </div>
+        )}
       </header>
     );
   }

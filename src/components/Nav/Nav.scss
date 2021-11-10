@@ -25,7 +25,7 @@
     .search {
       @include flexJustEvenly;
 
-      #logoName {
+      .logoName {
         display: inline-block;
         margin-top: 25px;
         margin-left: 200px;
@@ -79,8 +79,7 @@
         font-size: 1.6em;
       }
 
-      .cartText,
-      .homeText {
+      .menuText {
         position: absolute;
         top: 74px;
         font-family: 'Cafe24Ohsquare';
@@ -122,33 +121,30 @@
     }
   }
   .navDropList {
-    .novelDropList {
-      margin: 0 auto;
-    }
-    .itDropList {
-      margin-left: 800px;
-    }
-    .allDropList {
-      margin-right: 800px;
-    }
+    display: flex;
+    position: relative;
+    height: 320px;
   }
-}
-.novelHidden,
-.computerHidden,
-.allListHidden {
-  display: none;
-}
-.novelOpen,
-.computerOpen,
-.allListOpen {
-  display: block;
 }
 
 .novelDropList {
-  width: 170px;
-  background-color: #fffbea;
+  position: absolute;
+  left: 45.5%;
+  text-align: center;
+}
 
-  .DropListName {
-    padding: 15px;
-  }
+.itDropList {
+  position: absolute;
+  right: 28.5%;
+  text-align: center;
+}
+
+.subLi {
+  margin: 20px 0;
+  color: gray;
+}
+
+.subLi:hover {
+  color: $endColor;
+  cursor: pointer;
 }
