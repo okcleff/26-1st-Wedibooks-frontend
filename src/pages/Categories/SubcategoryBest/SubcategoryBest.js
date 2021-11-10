@@ -3,13 +3,13 @@ import { withRouter } from 'react-router';
 
 export class SubcategoryBest extends Component {
   render() {
-    const { imgSrc, name, subcategory, id } = this.props.list;
-
+    const { imgSrc, name, subcategory, id } = list;
+    const { list, history } = this.props;
     return (
       <div
         className="subcategoryBest"
         onClick={() => {
-          this.props.history.push(`/details/${id}`);
+          history.push(`/details/${id}`);
         }}
       >
         <div className="numbering">{id}</div>

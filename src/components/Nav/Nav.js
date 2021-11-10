@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import './Nav.scss';
 
 export class Nav extends Component {
@@ -21,6 +22,7 @@ export class Nav extends Component {
 
   render() {
     const { list } = this.state;
+
     return (
       <div>
         <ul>
@@ -42,4 +44,4 @@ export class Nav extends Component {
   }
 }
 
-export default Nav;
+export default withRouter(Nav);
