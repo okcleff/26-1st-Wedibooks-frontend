@@ -10,7 +10,7 @@ export class Routes extends Component {
         <Switch>
           <Route exact path="/" component={Nav} />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     );
   }
