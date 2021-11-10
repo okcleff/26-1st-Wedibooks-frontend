@@ -16,6 +16,7 @@ export class LoginNav extends Component {
           <div className="search">
             <Link to="/footer">
               <span id="logoName">WEDIBOOKS</span>
+              {/* dsfsdfs */}
             </Link>
             <input
               className="searchInput"
