@@ -14,11 +14,11 @@ export class Recommendation extends Component {
   }
 
   componentDidMount() {
-    fetch('./data/RecommendationList.json')
+    fetch('http://10.58.0.31:8000/products?requests=True')
       .then(res => res.json())
       .then(data => {
         this.setState({
-          recommendationList: data,
+          recommendationList: data.products,
         });
       });
   }
@@ -62,7 +62,7 @@ export class Recommendation extends Component {
               .map(recommendationList => {
                 return (
                   <RecommendedBook
-                    key={recommendationList.id}
+                    key={recommendationList.name}
                     recommendationList={recommendationList}
                     startIndex={startIndex}
                     endIndex={endIndex}

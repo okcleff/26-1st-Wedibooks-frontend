@@ -10,13 +10,13 @@ export class Main extends Component {
         <Recommendation />
         <MainSlides
           slideTitle="집 앞 서점에 방금 나온 신간"
-          listUrl="./data/NewIssueList.json"
+          listUrl="http://10.58.0.31:8000/products?new_books=True"
           misc="출간일 :"
           isIssue="true"
         />
         <MainSlides
           slideTitle="베스트셀러"
-          listUrl="./data/BestSellerListAll.json"
+          listUrl="http://10.58.0.31:8000/products?rating=-average_rating"
           misc="평점 :"
         />
       </div>

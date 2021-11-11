@@ -24,6 +24,11 @@ export class Routes extends Component {
             path="/categories/subcategories/:id"
             component={Categories}
           />
+          {/* <Route
+            exact
+            path="/categories/subcategories/:id"
+            component={Categories}
+          /> */}
         </Switch>
         <Footer />
       </Router>

@@ -3,28 +3,28 @@ import React, { Component } from 'react';
 export class RecommendedBook extends Component {
   render() {
     const {
-      headDesc,
-      detailDesc1,
-      detailDesc2,
-      imgSrc,
+      head_description,
+      detail_description1,
+      detail_description2,
+      image,
       name,
       author,
-      issueDate,
+      date_published,
     } = this.props.recommendationList;
 
     return (
       <div className="recommendedBook">
         <div className="rcmDesc">
-          <p className="headDesc">{headDesc}</p>
-          <p className="detailDesc">{detailDesc1}</p>
-          <p className="detailDesc">{detailDesc2}</p>
+          <p className="headDesc">{head_description}</p>
+          <p className="detailDesc">{detail_description1}</p>
+          <p className="detailDesc">{detail_description2}</p>
         </div>
         <div className="imgWrap">
-          <img className="rcmBookImg" src={imgSrc} alt={name} />
+          <img className="rcmBookImg" src={image} alt={name} />
           <div className="bookInfo">
             <p className="bookTitle">{name}</p>
             <p>{author}</p>
-            <p>{issueDate}</p>
+            <p>{date_published}</p>
           </div>
         </div>
       </div>

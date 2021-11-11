@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { RiHome2Fill, RiShoppingCartFill } from 'react-icons/ri';
 import { HiViewList } from 'react-icons/hi';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { MENU_LISTS } from './MenuLists';
 import './Nav.scss';
 
@@ -73,18 +73,36 @@ export class Nav extends Component {
         {isOpened && (
           <div className="navDropList">
             <ul className="novelDropList">
-              {MENU_LISTS.slice(1, 9).map(el => {
+              {MENU_LISTS.slice(0, 8).map(el => {
                 return (
-                  <li className="subLi" key={el.id}>
+                  <li
+                    className="subLi"
+                    key={el.id}
+                    onClick={() => {
+                      this.props.history.push(
+                        // `/products?sub_category=${el.id}`
+                        `/products/${el.id}`
+                      );
+                    }}
+                  >
                     {el.novelList}
                   </li>
                 );
               })}
             </ul>
             <ul className="itDropList">
-              {MENU_LISTS.slice(10, 15).map(el => {
+              {MENU_LISTS.slice(8).map(el => {
                 return (
-                  <li className="subLi" key={el.id}>
+                  <li
+                    className="subLi"
+                    key={el.id}
+                    onClick={() => {
+                      this.props.history.push(
+                        // `/products?sub_category=${el.id}`
+                        `/products/${el.id}`
+                      );
+                    }}
+                  >
                     {el.novelList}
                   </li>
                 );
@@ -98,4 +116,4 @@ export class Nav extends Component {
   }
 }
 
-export default Nav;
+export default withRouter(Nav);

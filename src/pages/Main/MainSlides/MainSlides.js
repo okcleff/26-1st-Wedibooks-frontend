@@ -19,7 +19,7 @@ export class MainSlides extends Component {
       .then(res => res.json())
       .then(data => {
         this.setState({
-          bookList: data,
+          bookList: data.products,
         });
       });
   }
@@ -61,7 +61,7 @@ export class MainSlides extends Component {
           {bookList.slice(startIndex, endIndex).map(bookList => {
             return (
               <BooksInSlide
-                key={bookList.id}
+                key={bookList.name}
                 bookList={bookList}
                 misc={misc}
                 isIssue={isIssue}
