@@ -1,0 +1,105 @@
+.BookContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 166px;
+  font-size: 20px;
+
+  .imageBox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 350px;
+    height: 400px;
+  }
+
+  .book1 {
+    height: 65%;
+    border-radius: 2px;
+    box-shadow: 5px 5px 5px gray;
+  }
+
+  .previousView {
+    margin: 10px;
+    width: 90px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .RightBox {
+    width: 450px;
+    height: 400px;
+
+    .bookExplanation {
+      width: 400px;
+      height: 230px;
+
+      .firstCategory {
+        margin-top: 15px;
+        font-size: 15px;
+      }
+
+      .bookTitle {
+        margin-top: 15px;
+        font-size: 35px;
+        font-weight: 700;
+      }
+
+      .starRating {
+        display: flex;
+        margin-top: 25px;
+        color: #ff4242;
+      }
+
+      .averageRate {
+        margin-left: 10px;
+        margin-top: 20px;
+      }
+
+      .bookAuthor {
+        margin-top: 20px;
+        font-size: 22px;
+        font-weight: 700;
+      }
+
+      .bookCompany {
+        margin-top: 10px;
+        font-size: 20px;
+      }
+    }
+
+    .bookPrice {
+      padding-top: 20px;
+      width: 400px;
+      height: 70px;
+      font-weight: 700;
+    }
+
+    .likeNumering {
+      font-size: 16px;
+    }
+
+    .buttonBox {
+      display: flex;
+      .purchaseButtons {
+        .manyButtons {
+          margin-top: 10px;
+          margin-left: 5px;
+          width: 40px;
+          height: 40px;
+          border: none;
+          border-radius: 5px;
+          color: white;
+          background-color: #f9b418;
+
+          .heartIcon,
+          .cartIcon {
+            font-size: x-large;
+          }
+        }
+      }
+    }
+  }
+}

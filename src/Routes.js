@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-// import Nav from './components/Nav/Nav';
-// import Footer from './components/Footer/Footer';
-// import Category from './pages/Nav/Category';
-// import LoginNav from './components/Nav/LoginNav';
+import Details from './pages/Details/Details';
+import Login from './pages/Login/Login';
+import SignUp from './pages/SignUp/SignUp';
+import Nav from './components/Nav/Nav';
+import Main from './pages/Main/Main';
+import Categories from './pages/Categories/Categories';
+import Footer from './components/Footer/Footer';
 import Cart from './pages/Cartpage/Cart';
 export class Routes extends Component {
   render() {
     return (
       <Router>
+        <Nav />
         <Switch>
-          {/* <Route exact path="/" component={Nav} />
-          <Route exact path="/LoginNav" component={LoginNav} />
-          <Route exact path="/Footer" component={Footer} />
-          <Route exact path="/Category" component={Category} /> */}
+          <Route exact path="/products/:id" component={Details} />
+          <Route exact path="/SignUp" component={SignUp} />
+          <Route exact path="/Login" component={Login} />
+          <Route exact path="/" component={Main} />
           <Route exact path="/Cartpage" component={Cart} />
+          <Route
+            exact
+            path="/categories/subcategories/:id"
+            component={Categories}
+          />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     );
   }

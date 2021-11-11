@@ -1,0 +1,38 @@
+.reviewListBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  .reviewListStarBox {
+    margin-left: 165px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    width: 800px;
+  }
+
+  .userLine {
+    margin-left: 75px;
+    width: 715px;
+    border-bottom: 1px solid gray;
+  }
+
+  .listParent {
+    display: flex;
+    margin-left: 75px;
+    width: 700px;
+  }
+
+  .userID {
+    align-items: center;
+    margin-top: 25px;
+    margin-left: 10px;
+  }
+
+  .lastReviewContainer {
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+}
