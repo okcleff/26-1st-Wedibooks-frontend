@@ -38,11 +38,10 @@ export class Nav extends Component {
             />
             <div>
               <button className="cashButton" type="button">
-                {/* {isOpened ? '회원가입' : '로그아웃'} */}
-                회원가입
+                {isOpened ? '회원가입' : '캐시 충전'}
               </button>
               <button className="myBooksButton" type="button">
-                로그인
+                {isOpened ? '로그인' : '내 서재'}
               </button>
             </div>
           </div>

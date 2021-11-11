@@ -5,9 +5,15 @@
   font-weight: normal;
   font-style: normal;
 }
-
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 100px;
+}
 footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   height: 270px;
   width: 100%;
@@ -19,7 +25,7 @@ footer {
     justify-content: space-between;
     align-self: center;
     width: 45%;
-    height: 270px;
+    // height: 500px;
     margin: 30px auto auto auto;
     color: linen;
 
