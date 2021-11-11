@@ -8,7 +8,7 @@ class UserReviews extends Component {
   render() {
     const { bookDetail, showScore, commentInput, textChange, pressEnter } =
       this.props;
-    const { average_rate } = bookDetail;
+    const { average_rating } = bookDetail;
     return (
       <div className="userReviewsList">
         <div className="userReviewName">리뷰</div>
@@ -21,14 +21,14 @@ class UserReviews extends Component {
         </div>
         <div className="reviewBox">
           <StarRating />
-          <div className="starRate">평점:{average_rate}</div>
+          <div className="starRate">평점:{average_rating}</div>
           <input
             className="reviewInput"
             type="text"
             placeholder="리뷰 작성 시 광고 및 욕설, 비속어나 타인을 비방하는 문구를 사용하시면 비공개될 수 있습니다."
             onChange={textChange}
             onKeyPress={pressEnter}
-            value={commentInput}
+            // value={commentInput}
           />
           <BookBorrow title="리뷰작성" onClick={this.add} />
         </div>

@@ -17,7 +17,7 @@ class ReviewsList extends Component {
                 {el.rating}
               </div>
               <div className="userID">{el.username}</div>
-              <div className="lastReviewContainer">{el.contents}</div>
+              <div className="lastReviewContainer">{el.content}</div>
             </div>
           ))}
         </div>

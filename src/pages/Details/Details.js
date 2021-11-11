@@ -10,40 +10,25 @@ class Details extends Component {
   constructor() {
     super();
     this.state = {
-      bookDetail: [],
+      bookDetail: {},
       newComment: '',
     };
   }
 
   componentDidMount() {
-    fetch('./data/DetailDataV2.json')
+    fetch(`http://10.58.7.203:8000/products/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(output => {
         this.setState({
-          bookDetail: output.message[0],
+          bookDetail: output.message,
         });
       });
   }
 
-  textChange = commentInput => {
+  textChange = e => {
     this.setState({
-      newComment: commentInput.target.value,
+      newComment: e.target.value,
     });
-    fetch('./data/DetailDataV2.json', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        content: 'newComment',
-      }),
-    })
-      .then(response => response.json())
-      .then(response => {
-        if (response.token) {
-          localStorage.setItem('wtw-token', response.token);
-        }
-      });
   };
 
   pressEnter = commentInput => {
@@ -56,31 +41,8 @@ class Details extends Component {
     }
   };
 
-  showScore = score => {
-    this.setState({
-      [score]: score,
-    });
-
-    fetch('./data/DetailDataV2.json', {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        rating: 'score',
-      }),
-    })
-      .then(response => response.json())
-      .then(response => {
-        if (response.token) {
-          localStorage.setItem('wtw-token', response.token);
-        }
-      });
-  };
-
   render() {
     const { bookDetail, commentInput } = this.state;
-
     return (
       <article className="totalBox">
         {bookDetail.product_info && (

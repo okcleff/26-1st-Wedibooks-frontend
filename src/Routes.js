@@ -10,7 +10,8 @@ export class Routes extends Component {
       <Router>
         <Nav />
         <Switch>
-          <Route exact path="/detail" component={Details} />
+          {/* <Route exact path="/products" component={Details} /> */}
+          <Route exact path="/products/:id" component={Details} />
           <Route exact path="/" component={Main} />
         </Switch>
       </Router>

@@ -41,7 +41,7 @@ class BookContainer extends Component {
       sub_category,
       publisher,
       price,
-      average_rate,
+      average_rating,
     } = bookDetail;
     const number = Math.round(price);
     const priceNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -61,7 +61,7 @@ class BookContainer extends Component {
             <li className="bookTitle">{name}</li>
             <li className="starRating">
               <StarRating />
-              <div className="averageRate">{average_rate}점</div>
+              <div className="averageRate">{average_rating}점</div>
             </li>
             <li className="bookAuthor">{author} 저</li>
             <li className="bookCompany">{publisher} 출판</li>

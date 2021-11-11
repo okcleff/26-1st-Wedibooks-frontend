@@ -20,43 +20,18 @@ class NewStar extends Component {
     const { star } = this.state;
     return (
       <>
-        <StarIcon
-          value="1"
-          changeStarColor={this.changeStarColor}
-          currentStar={star}
-          score={1}
-          showScore={showScore}
-        />
-
-        <StarIcon
-          value="2"
-          changeStarColor={this.changeStarColor}
-          currentStar={star}
-          score={2}
-          showScore={showScore}
-        />
-
-        <StarIcon
-          value="3"
-          changeStarColor={this.changeStarColor}
-          currentStar={star}
-          score={3}
-          showScore={showScore}
-        />
-        <StarIcon
-          value="4"
-          changeStarColor={this.changeStarColor}
-          currentStar={star}
-          score={4}
-          showScore={showScore}
-        />
-        <StarIcon
-          value="5"
-          changeStarColor={this.changeStarColor}
-          currentStar={star}
-          score={5}
-          showScore={showScore}
-        />
+        {[1, 2, 3, 4, 5].map((ele, idx) => {
+          return (
+            <StarIcon
+              key={idx}
+              value={ele}
+              changeStarColor={this.changeStarColor}
+              currentStar={star}
+              score={ele}
+              showScore={showScore}
+            />
+          );
+        })}
       </>
     );
   }
