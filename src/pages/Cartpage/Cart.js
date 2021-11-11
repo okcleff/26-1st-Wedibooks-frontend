@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import BuyingButton from './BuyingButton/BuyingButton';
 import { AiFillCheckCircle } from 'react-icons/ai';
-import CartBoxSecondLine from './CartBoxSecondLine/CartBoxSecondLine';
+// import CartBoxSecondLine from './CartBoxSecondLine/CartBoxSecondLine';
 import CartBoxThirdLine from './CartBoxThirdLine/CartBoxThirdLine';
 // import CartData from './CartBox/CartBox';
 import './Cart.scss';
+import DeleteButton from './DeleteButton/DeleteButton';
 
 class Cart extends Component {
   constructor() {
@@ -12,10 +13,11 @@ class Cart extends Component {
     this.state = {
       cartList: [],
       bookPrice: 0,
-      allChecked: false,
+      isAllCheck: true,
+      checkout: 4,
     };
   }
-
+  const;
   componentDidMount() {
     fetch('./data/CartData.json')
       .then(res => res.json())
@@ -32,14 +34,50 @@ class Cart extends Component {
     });
   };
 
-  handleAllChecked = check => {
-    //전체선택 체크박스값을 개별에도 다 넣어주기
-    const { allChecked } = this.state;
-    this.setState = {
-      allChecked: !allChecked,
-      check: !allChecked,
-    };
+  checkBox = isCheck => {
+    let { allCheck } = this.state;
+    this.setState({
+      allCheck: allCheck.checked ? isCheck.checked : allCheck.false,
+    });
   };
+
+  // CheckBox = ()=>{
+  //   const [checkedList, setCheckedLists]= useState([]);
+
+  //   const onCheckedAll = useCallback((checked)=>{
+  //     if(checked){
+  //        const checkedListArray =[];
+  //        this.state.cartList.forEach((list)=>checkedListArray.push(list));
+  //        setCheckedLists(checkedListArray);
+  //     }else{
+  //       setCheckedLists([]);
+  //     }
+  //   ,[this.state.cartList]
+  //   );
+
+  // };
+
+  // const handleCheck = (allCheck) =>{
+  //   const { cartList }=this.state;
+  //   allCheck ?
+  //   setIsChecked(()=>{
+  // if(isChecked.allCheck){
+  //   return {allCheck:false};
+  // }else{
+  //   const checkedObj={};
+  //    cartList.map((el)=>{
+  //      checkedObj[el.id]=true;
+  //    })
+  //    return {allCheck:true, ...checkedObj}
+  // }
+  //   })
+  //   :
+  //   setIsChecked({
+  //     ...isChecked,
+  //     allCheck:false,
+  //     [cartList.id]: !isChecked[cartList.id],
+  //   })
+  // };
 
   render() {
     const { cartList, bookPrice } = this.state;
@@ -50,9 +88,14 @@ class Cart extends Component {
         <div className="cartBoxContainer">
           <div className="cartBox">
             <div className="cartBoxFirstLine">구매가능</div>
-            <hr />
+            {/* <hr />
             <CartBoxSecondLine />
-            <hr />
+            <hr /> */}
+            <div className="cartBoxSecondLine">
+              <input type="checkbox" className="cb1" onClick="checkbox(this)" />
+              <div className="secondLineText">전체선택</div>
+              <DeleteButton title="전체삭제" />
+            </div>
             {cartList.map(el => {
               return (
                 <CartBoxThirdLine
@@ -69,12 +112,12 @@ class Cart extends Component {
               <ul className="totalPrice">
                 <li className="totalList">
                   <AiFillCheckCircle className="checkBoxCircle" />
-                  총*권을 선택하셨습니다.
+                  &nbsp; 총*권을 선택하셨습니다.
                 </li>
                 <li className="priceList">총 상품 금액</li>
                 <li className="priceSum">
                   <div className="purchaseTotalPrice">합계</div>
-                  {bookPrice}
+                  <div className="totalBookPrice">{bookPrice}</div>
                 </li>
               </ul>
             </div>

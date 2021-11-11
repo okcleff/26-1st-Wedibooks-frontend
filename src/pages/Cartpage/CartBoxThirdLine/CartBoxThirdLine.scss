@@ -44,23 +44,7 @@
     margin-right: 22px;
     font-size: 18px;
     font-weight: 700;
-  }
-}
-.cartBoxSecondLine {
-  display: flex;
-  justify-content: space-between;
-
-  input[type='checkbox'] {
-    transform: scale(1.4);
-  }
-  .cb1 {
-    margin-top: 20px;
-    width: 70px;
-  }
-
-  .secondLineText {
-    margin-left: -380px;
-    margin-top: 16px;
-    font-size: 17px;
+    font-size: 1.4rem;
+    color: #f9b418;
   }
 }

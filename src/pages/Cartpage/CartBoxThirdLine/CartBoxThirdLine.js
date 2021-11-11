@@ -12,34 +12,32 @@ class CartBoxThirdLine extends Component {
     priceSum(e.target.checked, price1);
   };
 
+  // checkBoxInput = e => {
+  //   let { checkbox } = this.props;
+  //   let checked = e.target.parentNode.lastChild.value;
+  //   console.log(e.target.parentNode.lastChild.value);
+  // };
   render() {
     const { cartList } = this.props;
     const { imgSrc, name, author, price } = cartList;
 
     return (
-      <>
-        <div className="cartBoxSecondLine">
-          <input type="checkbox" className="cb1" />
-          <div className="secondLineText">전체선택</div>
-          <DeleteButton title="전체삭제" />
+      <div className="cartBoxThirdLine">
+        <input type="checkbox" className="cb2" onChange={this.checkInput} />
+        <div className="cartBookImage">
+          <img className="checkBook" alt="checkBook" src={imgSrc} />
         </div>
-        <div className="cartBoxThirdLine">
-          <input type="checkbox" className="cb2" onChange={this.checkInput} />
-          <div className="cartBookImage">
-            <img className="checkBook" alt="checkBook" src={imgSrc} />
-          </div>
-          <div className="bookBoxContents">
-            <ul className="bookTitle">
-              <li className="title"> {name} </li>
-              <li className="author"> {author} 저 </li>
-              <li>
-                <DeleteButton title="선택삭제" />
-              </li>
-            </ul>
-          </div>
-          <div className="bookPrice">{price}</div>
+        <div className="bookBoxContents">
+          <ul className="bookTitle">
+            <li className="title"> {name} </li>
+            <li className="author"> {author} 저 </li>
+            <li>
+              <DeleteButton title="선택삭제" />
+            </li>
+          </ul>
         </div>
-      </>
+        <div className="bookPrice">{price}</div>
+      </div>
     );
   }
 }
