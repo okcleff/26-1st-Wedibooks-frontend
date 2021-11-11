@@ -77,7 +77,7 @@ class BookContainer extends Component {
               >
                 <BsFillSuitHeartFill className="heartIcon" />
               </button>
-              <Link to="/cart">
+              <Link to="/Cartpage">
                 <button className="manyButtons" type="button">
                   <RiShoppingCartFill className="cartIcon" />
                 </button>

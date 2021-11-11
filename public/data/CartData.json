@@ -26,7 +26,7 @@
   },
   {
     "id": 3,
-    "imgSrc": "https://cdn.pixabay.com/photo/2014/02/17/13/52/heart-268151__340.jpg",
+    "imgSrc": "https://cdn.pixabay.com/photo/2021/11/05/12/27/woman-6771288_1280.jpg",
     "name": "책 제목 3",
     "headDesc": "침묵을 택한 목격자, 범죄의 타깃이 되다",
     "detailDesc1": "조심해,",
@@ -34,12 +34,12 @@
     "desc": "Hi there.",
     "author": "작가 미상",
     "issueDate": "2020.11.12",
-    "price": "12,000원",
+    "price": "15,000원",
     "reviewDate": "2020.12.01"
   },
   {
     "id": 4,
-    "imgSrc": "https://cdn.pixabay.com/photo/2014/02/17/13/52/heart-268151__340.jpg",
+    "imgSrc": "https://cdn.pixabay.com/photo/2015/08/18/20/45/kids-894787_1280.jpg",
     "name": "책 제목 4",
     "headDesc": "침묵을 택한 목격자, 범죄의 타깃이 되다",
     "detailDesc1": "조심해,",
@@ -47,7 +47,7 @@
     "desc": "Hi there.",
     "author": "작가 미상",
     "issueDate": "2020.11.12",
-    "price": "12,000원",
+    "price": "16,700원",
     "reviewDate": "2020.12.01"
   }
 ]
