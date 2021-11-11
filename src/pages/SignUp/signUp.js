@@ -67,8 +67,7 @@ export class SignUp extends Component {
     const { pwCheck, password } = this.state;
     const passwordConfirmed = pwCheck === password;
     return (
-      <div className="totalContainer">
-        <UserNav />
+      <div className="totalContainerSignUp">
         <div className="signUpBody">
           <section className="signUpSection">
             {INPUT_LIST.map(inputList => {

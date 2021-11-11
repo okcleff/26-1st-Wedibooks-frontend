@@ -31,7 +31,7 @@ export class Login extends Component {
           alert('로그인 성공');
           localStorage.setItem('token', result.access_token);
           console.log(result.access_token);
-          this.props.history.push('/Main');
+          this.props.history.push('/');
         }
       });
   };
@@ -69,8 +69,8 @@ export class Login extends Component {
   render() {
     const { inputId, inputPw } = this.state;
     return (
-      <div className="totalContainer">
-        <UserNav />
+      <div className="totalContainerLogin">
+        {/* <UserNav /> */}
         <form className="loginSection">
           <div className="inputIdPw">
             <input

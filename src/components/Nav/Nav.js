@@ -28,7 +28,7 @@ export class Nav extends Component {
       <header className="nav">
         <nav className="navTotal">
           <div className="search">
-            <Link to="/footer" className="logoName">
+            <Link to="/" className="logoName">
               WEDIBOOKS
             </Link>
             <input
@@ -46,12 +46,12 @@ export class Nav extends Component {
             </div>
           </div>
           <div className="homeCart">
-            <Link to="/footer">
+            <Link to="/">
               <RiHome2Fill className="homeIcon" />
               <span className="menuText">HOME</span>
             </Link>
 
-            <Link to="/footer">
+            <Link to="/Cartpage">
               <RiShoppingCartFill className="cartIcon" />
               <span className="menuText">CART</span>
             </Link>
@@ -73,7 +73,7 @@ export class Nav extends Component {
         {isOpened && (
           <div className="navDropList">
             <ul className="novelDropList">
-              {MENU_LISTS.slice(1, 9).map(el => {
+              {MENU_LISTS.slice(0, 8).map(el => {
                 return (
                   <li className="subLi" key={el.id}>
                     {el.novelList}
@@ -82,7 +82,7 @@ export class Nav extends Component {
               })}
             </ul>
             <ul className="itDropList">
-              {MENU_LISTS.slice(10, 15).map(el => {
+              {MENU_LISTS.slice(8).map(el => {
                 return (
                   <li className="subLi" key={el.id}>
                     {el.novelList}

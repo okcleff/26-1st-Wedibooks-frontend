@@ -45,7 +45,9 @@ export class InputData extends Component {
           maxlength={maxlength}
           onChange={this.handleInputs}
         />
-        {!this.state.isValid && <span>{errormessage}</span>}
+        {!this.state.isValid && (
+          <span className="errorMessage">{errormessage}</span>
+        )}
       </div>
     );
   }
