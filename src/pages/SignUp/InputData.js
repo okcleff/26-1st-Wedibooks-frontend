@@ -8,7 +8,8 @@ export class InputData extends Component {
     };
   }
   handleInputs = event => {
-    const { handleInputs, name, passwordConfirmed } = this.props;
+    const { handleInputs } = this.props;
+    const { name } = this.props.inputList;
     handleInputs(event);
 
     if (name === 'id') {
@@ -21,10 +22,6 @@ export class InputData extends Component {
       pwReg.test(event.target.value)
         ? this.setState({ isValid: true })
         : this.setState({ isValid: false });
-    } else if (name === 'pwCheck') {
-      passwordConfirmed
-        ? this.setState({ isValid: true })
-        : this.setState({ isValid: false });
     } else if (name === 'email') {
       const pwReg =
         /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
@@ -35,8 +32,9 @@ export class InputData extends Component {
   };
 
   render() {
-    const { inputType, placeholder, name, maxlength, errormessage } =
-      this.props;
+    const { inputList } = this.props;
+    const { inputType, placeholder, name, maxlength, errormessage } = inputList;
+
     return (
       <div>
         <input
@@ -45,10 +43,9 @@ export class InputData extends Component {
           type={inputType}
           placeholder={placeholder}
           maxlength={maxlength}
-          errormessage={errormessage}
           onChange={this.handleInputs}
         />
-        {this.state.isValid ? null : <span>{errormessage}</span>}
+        {!this.state.isValid && <span>{errormessage}</span>}
       </div>
     );
   }

@@ -14,7 +14,7 @@ export class Login extends Component {
   submitUserInfo = e => {
     const { inputId, inputPw } = this.state;
     e.preventDefault();
-    fetch('http://10.58.5.138:8000/users/signin', {
+    fetch('http://10.58.7.203:8000/users/signin', {
       method: 'POST',
       body: JSON.stringify({
         id: inputId,
@@ -30,6 +30,7 @@ export class Login extends Component {
         } else if (result.access_token) {
           alert('로그인 성공');
           localStorage.setItem('token', result.access_token);
+          console.log(result.access_token);
           this.props.history.push('/Main');
         }
       });
@@ -63,7 +64,6 @@ export class Login extends Component {
     this.setState({
       inputPw: e.target.value,
     });
-    //}
   };
 
   render() {

@@ -21,15 +21,6 @@ const INPUT_LIST = [
 
   {
     id: 3,
-    className: 'inputPwCheck',
-    inputType: 'password',
-    name: 'pwCheck',
-    placeholder: '비밀번호 확인',
-    errormessage: '비밀번호가 다릅니다',
-  },
-
-  {
-    id: 4,
     className: 'inputEmail',
     inputType: 'text',
     name: 'email',
@@ -38,7 +29,7 @@ const INPUT_LIST = [
   },
 
   {
-    id: 5,
+    id: 4,
     className: 'inputName',
     inputType: 'text',
     name: 'userName',

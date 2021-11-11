@@ -10,7 +10,6 @@ export class SignUp extends Component {
     this.state = {
       id: '',
       password: '',
-      pwCheck: '',
       email: '',
       userName: '',
       birth: '',
@@ -20,7 +19,7 @@ export class SignUp extends Component {
 
   submitUserInfoToSignUp = e => {
     const { id, password, userName, email, birth, gender } = this.state;
-    fetch('http://10.58.5.138:8000/users/signup', {
+    fetch('http://10.58.7.203:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
         id: id,
@@ -57,22 +56,16 @@ export class SignUp extends Component {
       [name]: value,
     });
   };
-
-  pushMan = () => {
+  pushGender = e => {
+    const { name } = e.target;
     this.setState({
-      gender: '1',
+      gender: name === 'male' ? 1 : 2,
     });
   };
 
-  pushWoman = () => {
-    this.setState({
-      gender: '2',
-    });
-  };
   render() {
     const { pwCheck, password } = this.state;
     const passwordConfirmed = pwCheck === password;
-
     return (
       <div className="totalContainer">
         <UserNav />
@@ -82,13 +75,8 @@ export class SignUp extends Component {
               return (
                 <InputData
                   key={inputList.id}
-                  name={inputList.name}
+                  inputList={inputList}
                   passwordConfirmed={passwordConfirmed}
-                  passwordCheck={this.passwordCheck}
-                  inputType={inputList.inputType}
-                  placeholder={inputList.placeholder}
-                  maxlength={inputList.maxLength}
-                  errormessage={inputList.errormessage}
                   handleInputs={this.handleInputs}
                 />
               );
@@ -103,15 +91,26 @@ export class SignUp extends Component {
                 onChange={this.handleInputs}
               />
               <span className="MenWomen">
-                <button onClick={this.pushMan} className="buttonMaleFemale">
+                <button
+                  name="male"
+                  onClick={this.pushGender}
+                  className="buttonMaleFemale"
+                >
                   남
                 </button>
-                <button onClick={this.pushWoman} className="buttonMaleFemale">
+                <button
+                  name="female"
+                  onClick={this.pushGender}
+                  className="buttonMaleFemale"
+                >
                   여
                 </button>
               </span>
             </div>
-            <button onClick={this.goToMain} className="signInbutton">
+            <button
+              onClick={this.submitUserInfoToSignUp}
+              className="signInbutton"
+            >
               회원 가입 완료
             </button>
           </section>
