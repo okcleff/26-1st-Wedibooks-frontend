@@ -120,31 +120,28 @@
       font-weight: bold;
     }
   }
-  .navDropList {
-    display: flex;
-    position: relative;
-    height: 320px;
+}
+
+.navDropList {
+  display: flex;
+  position: relative;
+  height: 320px;
+  .novelDropList {
+    position: absolute;
+    left: 45.5%;
+    text-align: center;
+  }
+  .itDropList {
+    position: absolute;
+    right: 28.5%;
+    text-align: center;
   }
 }
-
-.novelDropList {
-  position: absolute;
-  left: 45.5%;
-  text-align: center;
-}
-
-.itDropList {
-  position: absolute;
-  right: 28.5%;
-  text-align: center;
-}
-
 .subLi {
   margin: 20px 0;
   color: gray;
-}
-
-.subLi:hover {
-  color: $endColor;
-  cursor: pointer;
+  &:hover {
+    color: $endColor;
+    cursor: pointer;
+  }
 }

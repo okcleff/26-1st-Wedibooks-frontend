@@ -8,7 +8,7 @@ export class Routes extends Component {
   render() {
     return (
       <Router>
-        {/* <Nav /> */}
+        <Nav />
         <Switch>
           <Route exact path="/" component={Main} />
         </Switch>

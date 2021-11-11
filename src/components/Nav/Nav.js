@@ -28,7 +28,7 @@ export class Nav extends Component {
       <header className="nav">
         <nav className="navTotal">
           <div className="search">
-            <Link to="/footer" className="logoName">
+            <Link to="/" className="logoName">
               WEDIBOOKS
             </Link>
             <input
@@ -94,7 +94,6 @@ export class Nav extends Component {
         )}
       </header>
     );
-    // return <div>Nav</div>;
   }
 }
 

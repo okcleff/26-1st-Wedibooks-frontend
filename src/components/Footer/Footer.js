@@ -6,7 +6,7 @@ import './Footer.scss';
 export class Footer extends Component {
   render() {
     return (
-      <footer>
+      <footer className="footer">
         <section>
           <div className="firstLine">
             <div className="callNotice">
