@@ -37,12 +37,16 @@ export class Nav extends Component {
               placeholder="제목, 저자, 출판사 검색"
             />
             <div>
-              <button className="cashButton" type="button">
-                {isOpened ? '회원가입' : '캐시 충전'}
-              </button>
-              <button className="myBooksButton" type="button">
-                {isOpened ? '로그인' : '내 서재'}
-              </button>
+              <Link to="./SignUp">
+                <button className="cashButton" type="button">
+                  {isOpened ? '캐시 충전' : '회원가입'}
+                </button>
+              </Link>
+              <Link to="./Login">
+                <button className="myBooksButton" type="button">
+                  {isOpened ? '내 서재' : '로그인'}
+                </button>
+              </Link>
             </div>
           </div>
           <div className="homeCart">
