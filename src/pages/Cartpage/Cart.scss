@@ -40,7 +40,7 @@
       margin-left: 50px;
       margin-top: 20px;
       width: 300px;
-      height: 190px;
+      height: 185px;
 
       .priceDetails {
         width: 300px;
@@ -54,29 +54,9 @@
         .checkBoxCircle {
           color: gray;
         }
-
-        .list1 {
-          margin-top: 10px;
-          margin-left: 10px;
-        }
-
-        .list2 {
-          margin-top: 20px;
-          margin-left: 10px;
-        }
-
-        .list3 {
-          margin-top: 20px;
-          height: 50px;
-          line-height: 50px;
-          font-size: 20px;
-          font-weight: 700;
-          background-color: linen;
-
-          .list3Price {
-            margin-left: 10px;
-          }
-        }
+      }
+      .priceSum {
+        background-color: #f7edd6;
       }
     }
   }

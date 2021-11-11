@@ -13,7 +13,7 @@ class Cart extends Component {
     this.state = {
       cartList: [],
       bookPrice: 0,
-      isAllCheck: true,
+      allCheck: true,
       checkout: 4,
     };
   }
@@ -34,27 +34,17 @@ class Cart extends Component {
     });
   };
 
-  checkBox = isCheck => {
-    let { allCheck } = this.state;
-    this.setState({
-      allCheck: allCheck.checked ? isCheck.checked : allCheck.false,
-    });
-  };
-
-  // CheckBox = ()=>{
-  //   const [checkedList, setCheckedLists]= useState([]);
-
-  //   const onCheckedAll = useCallback((checked)=>{
-  //     if(checked){
-  //        const checkedListArray =[];
-  //        this.state.cartList.forEach((list)=>checkedListArray.push(list));
-  //        setCheckedLists(checkedListArray);
+  // checkBox = isCheck => {
+  //   let { allCheck } = this.state;
+  //   this.setState({
+  //     if(allCheck = true) {
+  //       isCheck.checked;
   //     }else{
-  //       setCheckedLists([]);
-  //     }
-  //   ,[this.state.cartList]
-  //   );
 
+  //     }
+
+  //     ,
+  //   });
   // };
 
   // const handleCheck = (allCheck) =>{
@@ -88,11 +78,9 @@ class Cart extends Component {
         <div className="cartBoxContainer">
           <div className="cartBox">
             <div className="cartBoxFirstLine">구매가능</div>
-            {/* <hr />
-            <CartBoxSecondLine />
-            <hr /> */}
+
             <div className="cartBoxSecondLine">
-              <input type="checkbox" className="cb1" onClick="checkbox(this)" />
+              <input type="checkbox" className="cb1" />
               <div className="secondLineText">전체선택</div>
               <DeleteButton title="전체삭제" />
             </div>
@@ -129,8 +117,3 @@ class Cart extends Component {
   }
 }
 export default Cart;
-
-//1.장바구니 리스트에 있는 책 중 구입할 책을 체크
-//2. 체크박스의 input값이 true/false인지 확인
-//3. true면 그 책의 price값을 합계칸으로 보낸다
-//4. 체크할수록 합계가 더해져 값이 변경(추가)된다.
