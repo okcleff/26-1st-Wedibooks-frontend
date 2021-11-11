@@ -28,7 +28,7 @@ export class Nav extends Component {
       <header className="nav">
         <nav className="navTotal">
           <div className="search">
-            <Link to="/footer" className="logoName">
+            <Link to="/" className="logoName">
               WEDIBOOKS
             </Link>
             <input
@@ -37,21 +37,25 @@ export class Nav extends Component {
               placeholder="제목, 저자, 출판사 검색"
             />
             <div>
-              <button className="cashButton" type="button">
-                {isOpened ? '회원가입' : '캐시 충전'}
-              </button>
-              <button className="myBooksButton" type="button">
-                {isOpened ? '로그인' : '내 서재'}
-              </button>
+              <Link to="./SignUp">
+                <button className="cashButton" type="button">
+                  {isOpened ? '캐시 충전' : '회원가입'}
+                </button>
+              </Link>
+              <Link to="./Login">
+                <button className="myBooksButton" type="button">
+                  {isOpened ? '내 서재' : '로그인'}
+                </button>
+              </Link>
             </div>
           </div>
           <div className="homeCart">
-            <Link to="/footer">
+            <Link to="/">
               <RiHome2Fill className="homeIcon" />
               <span className="menuText">HOME</span>
             </Link>
 
-            <Link to="/footer">
+            <Link to="/Cartpage">
               <RiShoppingCartFill className="cartIcon" />
               <span className="menuText">CART</span>
             </Link>
@@ -73,7 +77,7 @@ export class Nav extends Component {
         {isOpened && (
           <div className="navDropList">
             <ul className="novelDropList">
-              {MENU_LISTS.slice(1, 9).map(el => {
+              {MENU_LISTS.slice(0, 8).map(el => {
                 return (
                   <li className="subLi" key={el.id}>
                     {el.novelList}
@@ -82,7 +86,7 @@ export class Nav extends Component {
               })}
             </ul>
             <ul className="itDropList">
-              {MENU_LISTS.slice(10, 15).map(el => {
+              {MENU_LISTS.slice(8).map(el => {
                 return (
                   <li className="subLi" key={el.id}>
                     {el.novelList}

@@ -6,30 +6,30 @@
   font-style: normal;
 }
 
-html {
+.footer {
   position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 100px;
-}
-
-footer {
-  position: absolute;
   bottom: 0;
-  height: 270px;
   width: 100%;
+  padding-bottom: 25px;
   background-color: #fb8928;
   font-family: 'KoPubDotumMedium';
+
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+
+  body {
+    margin-bottom: 100px;
+  }
 
   section {
     display: flex;
     justify-content: space-between;
     align-self: center;
     width: 45%;
-    // height: 500px;
-    margin: 30px auto auto auto;
+    margin: 0 auto auto auto;
+    padding-top: 30px;
     color: linen;
 
     .callNotice {
