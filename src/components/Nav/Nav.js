@@ -73,7 +73,7 @@ export class Nav extends Component {
         {isOpened && (
           <div className="navDropList">
             <ul className="novelDropList">
-              {MENU_LISTS.slice(1, 9).map(el => {
+              {MENU_LISTS.slice(0, 8).map(el => {
                 return (
                   <li className="subLi" key={el.id}>
                     {el.novelList}
@@ -82,7 +82,7 @@ export class Nav extends Component {
               })}
             </ul>
             <ul className="itDropList">
-              {MENU_LISTS.slice(10, 15).map(el => {
+              {MENU_LISTS.slice(8).map(el => {
                 return (
                   <li className="subLi" key={el.id}>
                     {el.novelList}
