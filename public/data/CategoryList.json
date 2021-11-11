@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "category": "novel",
+    "subcategory": "한국 소설"
+  },
+  {
+    "id": 2,
+    "category": "novel",
+    "subcategory": "영미 소설"
+  },
+  {
+    "id": 3,
+    "category": "novel",
+    "subcategory": "일본 소설"
+  },
+  {
+    "id": 4,
+    "category": "novel",
+    "subcategory": "중국 소설"
+  },
+  {
+    "id": 5,
+    "category": "novel",
+    "subcategory": "북유럽 소설"
+  },
+  {
+    "id": 6,
+    "category": "novel",
+    "subcategory": "독일 소설"
+  },
+  {
+    "id": 7,
+    "category": "novel",
+    "subcategory": "프랑스 소설"
+  },
+  {
+    "id": 8,
+    "category": "novel",
+    "subcategory": "기타 국가 소설"
+  }
+]

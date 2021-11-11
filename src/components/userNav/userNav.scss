@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+
+.topNav {
+  border-style: #b0a8b9;
+  background-color: #ebf6ff;
+
+  .signUpHeader {
+    width: 100%;
+    margin: 0;
+    padding: 15px 0 15px;
+    border-bottom: 1px solid lightgray;
+    text-align: center;
+
+    .logo {
+      color: #2c73d2;
+      font-size: 1rem;
+      font-weight: 900;
+      text-decoration: none;
+    }
+  }
+
+  .loginNav {
+    @include flexAlignCenter;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ebf6ff;
+  }
+}
