@@ -1,0 +1,9 @@
+.StarIcon {
+  margin-top: 10px;
+  color: gray;
+  font-size: 27px;
+
+  &.activate {
+    color: red;
+  }
+}

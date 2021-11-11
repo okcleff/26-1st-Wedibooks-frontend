@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Details from './pages/Details/Details';
 import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
 import Nav from './components/Nav/Nav';
@@ -12,6 +13,8 @@ export class Routes extends Component {
     return (
       <Router>
         <Switch>
+          {/* <Route exact path="/products" component={Details} /> */}
+          <Route exact path="/products/:id" component={Details} />
           <Route exact path="/SignUp" component={SignUp} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/" component={Main} />
