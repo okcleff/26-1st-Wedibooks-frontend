@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import BuyingButton from './BuyingButton/BuyingButton';
 import { AiFillCheckCircle } from 'react-icons/ai';
-// import CartBoxSecondLine from './CartBoxSecondLine/CartBoxSecondLine';
 import CartBoxThirdLine from './CartBoxThirdLine/CartBoxThirdLine';
-// import CartData from './CartBox/CartBox';
 import './Cart.scss';
 import DeleteButton from './DeleteButton/DeleteButton';
 
@@ -13,11 +11,9 @@ class Cart extends Component {
     this.state = {
       cartList: [],
       bookPrice: 0,
-      allCheck: true,
-      checkout: 4,
     };
   }
-  const;
+
   componentDidMount() {
     fetch('./data/CartData.json')
       .then(res => res.json())
@@ -33,42 +29,6 @@ class Cart extends Component {
       bookPrice: isCheck ? bookPrice + price : bookPrice - price,
     });
   };
-
-  // checkBox = isCheck => {
-  //   let { allCheck } = this.state;
-  //   this.setState({
-  //     if(allCheck = true) {
-  //       isCheck.checked;
-  //     }else{
-
-  //     }
-
-  //     ,
-  //   });
-  // };
-
-  // const handleCheck = (allCheck) =>{
-  //   const { cartList }=this.state;
-  //   allCheck ?
-  //   setIsChecked(()=>{
-  // if(isChecked.allCheck){
-  //   return {allCheck:false};
-  // }else{
-  //   const checkedObj={};
-  //    cartList.map((el)=>{
-  //      checkedObj[el.id]=true;
-  //    })
-  //    return {allCheck:true, ...checkedObj}
-  // }
-  //   })
-  //   :
-  //   setIsChecked({
-  //     ...isChecked,
-  //     allCheck:false,
-  //     [cartList.id]: !isChecked[cartList.id],
-  //   })
-  // };
-
   render() {
     const { cartList, bookPrice } = this.state;
 

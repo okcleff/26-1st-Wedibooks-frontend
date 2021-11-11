@@ -28,9 +28,23 @@
         line-height: 40px;
         font-weight: 700;
       }
+      .cartBoxSecondLine {
+        display: flex;
+        justify-content: space-between;
 
-      hr {
-        width: 550px;
+        input[type='checkbox'] {
+          transform: scale(1.4);
+        }
+        .cb1 {
+          margin-top: 20px;
+          width: 70px;
+        }
+
+        .secondLineText {
+          margin-left: -380px;
+          margin-top: 16px;
+          font-size: 17px;
+        }
       }
     }
 
@@ -58,30 +72,12 @@
       }
       .priceSum {
         background-color: #f7edd6;
+        .totalBookPrice {
+          font-size: 1.4rem;
+          font-weight: bold;
+          color: #f9b418;
+        }
       }
     }
   }
-}
-.cartBoxSecondLine {
-  display: flex;
-  justify-content: space-between;
-
-  input[type='checkbox'] {
-    transform: scale(1.4);
-  }
-  .cb1 {
-    margin-top: 20px;
-    width: 70px;
-  }
-
-  .secondLineText {
-    margin-left: -380px;
-    margin-top: 16px;
-    font-size: 17px;
-  }
-}
-.totalBookPrice {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #f9b418;
 }
