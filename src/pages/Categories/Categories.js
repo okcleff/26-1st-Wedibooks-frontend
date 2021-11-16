@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import SubcategoryBest from './SubcategoryBest/SubcategoryBest';
 import { BsBookHalf } from 'react-icons/bs';
 import './Categories.scss';
@@ -14,11 +15,11 @@ export class Categories extends Component {
 
   componentDidMount() {
     const { id } = this.props.match.params;
-    fetch(`/data/subBestseller${id}.json`)
+    fetch(`http://10.58.3.205:8000/products?sub_category=${id}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
-          list: data,
+          list: data.products,
           id,
         });
       });
@@ -26,12 +27,12 @@ export class Categories extends Component {
 
   componentDidUpdate(prevProps) {
     const { id } = this.props.match.params;
-    fetch(`/data/subBestseller${id}.json`)
+    fetch(`http://10.58.3.205:8000/products?sub_category=${id}`)
       .then(res => res.json())
       .then(data => {
         if (id !== prevProps.match.params.id) {
           this.setState({
-            list: data,
+            list: data.products,
             id,
           });
         }
@@ -47,12 +48,11 @@ export class Categories extends Component {
           <span className="bookIcon">
             <BsBookHalf color="#f9b418" />
           </span>
-          {id < 9 ? '소설' : '컴퓨터/IT'}
         </h1>
         <div className="bestsellerTitle">베스트셀러</div>
         <div className="bestsellerWrap">
           {list.map(el => {
-            return <SubcategoryBest key={el.id} list={el} />;
+            return <SubcategoryBest key={id} list={el} />;
           })}
         </div>
       </div>
@@ -60,4 +60,4 @@ export class Categories extends Component {
   }
 }
 
-export default Categories;
+export default withRouter(Categories);

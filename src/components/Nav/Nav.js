@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { RiHome2Fill, RiShoppingCartFill } from 'react-icons/ri';
 import { HiViewList } from 'react-icons/hi';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { MENU_LISTS } from './MenuLists';
 import './Nav.scss';
 
@@ -37,14 +37,14 @@ export class Nav extends Component {
               placeholder="제목, 저자, 출판사 검색"
             />
             <div>
-              <Link to="./SignUp">
+              <Link to="/SignUp">
                 <button className="cashButton" type="button">
-                  {isOpened ? '캐시 충전' : '회원가입'}
+                  {isOpened ? '회원가입' : '회원가입'}
                 </button>
               </Link>
-              <Link to="./Login">
+              <Link to="/Login">
                 <button className="myBooksButton" type="button">
-                  {isOpened ? '내 서재' : '로그인'}
+                  {isOpened ? '로그인' : '로그인'}
                 </button>
               </Link>
             </div>
@@ -79,7 +79,15 @@ export class Nav extends Component {
             <ul className="novelDropList">
               {MENU_LISTS.slice(0, 8).map(el => {
                 return (
-                  <li className="subLi" key={el.id}>
+                  <li
+                    className="subLi"
+                    key={el.id}
+                    onClick={() => {
+                      this.props.history.push(
+                        `/categories/subcategories/${el.id}`
+                      );
+                    }}
+                  >
                     {el.novelList}
                   </li>
                 );
@@ -88,7 +96,15 @@ export class Nav extends Component {
             <ul className="itDropList">
               {MENU_LISTS.slice(8).map(el => {
                 return (
-                  <li className="subLi" key={el.id}>
+                  <li
+                    className="subLi"
+                    key={el.id}
+                    onClick={() => {
+                      this.props.history.push(
+                        `/categories/subcategories/${el.id}`
+                      );
+                    }}
+                  >
                     {el.novelList}
                   </li>
                 );
@@ -98,8 +114,7 @@ export class Nav extends Component {
         )}
       </header>
     );
-    // return <div>Nav</div>;
   }
 }
 
-export default Nav;
+export default withRouter(Nav);

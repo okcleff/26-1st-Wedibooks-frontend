@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 export class BooksInSlide extends Component {
   render() {
     const { misc, bookList, isIssue } = this.props;
-    const { imgSrc, issueDate, name, rating } = bookList;
+    const { image, date_published, name, rating } = bookList;
 
     return (
       <div className="bookNDesc">
         <Link to="/categories">
-          <img className="eachBook" src={imgSrc} alt={name} />
+          <img className="eachBook" src={image} alt={name} />
           <p className="bookDesc">
-            {misc} {isIssue ? issueDate : rating} <br />
+            {misc} {isIssue ? date_published : rating} <br />
             {name}
           </p>
         </Link>
