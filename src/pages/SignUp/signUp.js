@@ -19,7 +19,7 @@ export class SignUp extends Component {
 
   submitUserInfoToSignUp = e => {
     const { id, password, userName, email, birth, gender } = this.state;
-    fetch('http://10.58.7.203:8000/users/signup', {
+    fetch('http://10.58.3.205:8000/users/signup', {
       method: 'POST',
       body: JSON.stringify({
         id: id,

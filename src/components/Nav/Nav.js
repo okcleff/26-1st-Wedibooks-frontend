@@ -37,14 +37,14 @@ export class Nav extends Component {
               placeholder="제목, 저자, 출판사 검색"
             />
             <div>
-              <Link to="./SignUp">
+              <Link to="/SignUp">
                 <button className="cashButton" type="button">
-                  {isOpened ? '캐시 충전' : '회원가입'}
+                  {isOpened ? '회원가입' : '회원가입'}
                 </button>
               </Link>
-              <Link to="./Login">
+              <Link to="/Login">
                 <button className="myBooksButton" type="button">
-                  {isOpened ? '내 서재' : '로그인'}
+                  {isOpened ? '로그인' : '로그인'}
                 </button>
               </Link>
             </div>
@@ -84,8 +84,7 @@ export class Nav extends Component {
                     key={el.id}
                     onClick={() => {
                       this.props.history.push(
-                        // `/products?sub_category=${el.id}`
-                        `/products/${el.id}`
+                        `/categories/subcategories/${el.id}`
                       );
                     }}
                   >
@@ -102,8 +101,7 @@ export class Nav extends Component {
                     key={el.id}
                     onClick={() => {
                       this.props.history.push(
-                        // `/products?sub_category=${el.id}`
-                        `/products/${el.id}`
+                        `/categories/subcategories/${el.id}`
                       );
                     }}
                   >
@@ -116,7 +114,6 @@ export class Nav extends Component {
         )}
       </header>
     );
-    // return <div>Nav</div>;
   }
 }
 

@@ -14,7 +14,7 @@ export class Recommendation extends Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.0.31:8000/products?requests=True')
+    fetch('http://10.58.3.66:8000/products?requests=True')
       .then(res => res.json())
       .then(data => {
         this.setState({

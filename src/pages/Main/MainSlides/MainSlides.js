@@ -58,10 +58,10 @@ export class MainSlides extends Component {
         </button>
 
         <div className="slideList">
-          {bookList.slice(startIndex, endIndex).map(bookList => {
+          {bookList.slice(startIndex, endIndex).map((bookList, idx) => {
             return (
               <BooksInSlide
-                key={bookList.name}
+                key={idx}
                 bookList={bookList}
                 misc={misc}
                 isIssue={isIssue}
