@@ -1,21 +1,19 @@
 # Wedibooks 📚
->Redibooks clone project
+>Ridibooks를 모티브로 한 전자책 E-commerce 사이트 개발
 >
 >웹 사이트 | [구현 영상](https://youtu.be/vMHj90fjTl8)   
 
 ## 개발 기간 및 인원
 **개발 기간**: 2021/11/01 ~ 2021/11/12
 
-**개발 인원** : Front-End 4명, Back-End 2명
-* Front-End : 설혜린, 옥원철, 임기범, 지연비
-* Back-End : 이용건, 한화연
+**개발 인원** : Front-end 4명, Back-end 2명
+* Front-end : 설혜린, 옥원철, 임기범, 지연비
+* Back-end : 이용건, 한화연
 
-## Technology
-- Javascript
-- React.js
-- sass
-- Git, Github
-- Slack, Trello
+## 적용 기술
+- Front-end: HTML5, CSS3, React, Sass(SCSS), React Router v5
+- Back-end: Python, django, MySQL, Docker
+- 협업툴: Trello, Slack, Notion, Github, dbdiagram, postman
 
 ## 구현 기능
 > 회원가입 / 로그인 기능 구현
